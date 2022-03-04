@@ -1,10 +1,11 @@
 # Binary Search of Sorted Array
-create function it take array and number and the function return the index of number inside array if exsist or -1 if not exsist.
+create Binary Search function it take int of array and number and the Binary Search function return the index of number inside array if exsist or -1 if not exsist.
 
 ## Whiteboard Process
-![array-binary-search](https://user-images.githubusercontent.com/97642724/155875175-84d5eba4-64af-4705-88a6-ee5786f50038.png)
+![array-binary-search](https://user-images.githubusercontent.com/97642724/156798591-6c4732fb-3922-4138-a638-ffcb1db9ff81.png)
+
 
 
 ## Approach & Efficiency
-i learned how to search on number in  array and it's esay challenge about qustion, No  qustion
-evrything is clear.
+i learned how to make search Binary Search function to search on number in  array and how to use big (o) in my code .
+evrything is clear.......
