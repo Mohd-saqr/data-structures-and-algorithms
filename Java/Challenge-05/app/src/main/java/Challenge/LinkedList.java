@@ -84,7 +84,6 @@ public class LinkedList {
         if (includes(value)) {
 
             while (pointer != null) {
-
                 if (head.value == value) {
                     this.head = head.next;
                     size--;
@@ -104,8 +103,6 @@ public class LinkedList {
                 pointer = pointer.next;
 
             }
-
-
         } else {
             System.out.println(" given Value not exists");
         }
@@ -138,4 +135,40 @@ public class LinkedList {
         }
         System.out.println(out + "Null");
     }
+
+
+    //////////////// CHALLENGE 6
+    public int kthFromEnd(int k) {
+        Node pointer = this.head;
+        int place = (size - k) - 1;
+        int steps = 0;
+        if (k > size - 1 || k < 0) {
+            System.out.println("the value of index is not exists");
+            return -1;
+        } else {
+            while (steps != place) {
+                steps++;
+                pointer = pointer.next;
+            }
+
+        }
+        return pointer.value;
+    }
+
+    public int MiddleValueNode() {
+        Node pointer = this.head;
+        int place = (size / 2);
+        int steps = 0;
+        if (head == null) {
+            return -1;
+        }
+        while (steps != place) {
+            steps++;
+            pointer = pointer.next;
+        }
+
+        return pointer.value;
+
+    }
+
 }

@@ -9,16 +9,22 @@ public class App {
     }
 
     public static void main(String[] args) {
-LinkedList test = new LinkedList();
+        LinkedList test = new LinkedList();
+        test.append(0);
+        test.append(1);
+        test.append(2);
+        test.append(3);
+        test.append(4);
+        test.append(5);
+        test.append(6);
+        test.append(7);
+        test.append(8);
 
+//        System.out.println(test.size/2);
 
+        System.out.println(test.MiddleValueNode());
+        test.ToString();
 
-
-
-
-
-
-test.ToString();
 
     }
 }
