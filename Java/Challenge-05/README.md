@@ -48,5 +48,71 @@ newLinkedList.append(5); // linkedList become 10 => 5 => NULL
 newLinkedList.append(0); // linkedList become 10 => 5 => 0 =>NULL
 newLinkedList.Delete(5) // linkedList become 10 =>  0 =>NULL
 
+
+
+
+
 ```
+## /// some method added for challenge 6 ## kthFromEnd
+```
+
+
+        LinkedList test = new LinkedList();
+        test.append(1); /// index 4  head
+        test.append(2); /// index 3
+        test.append(3); /// index 2
+        test.append(4); /// index 1
+        test.append(5); /// index 0 tail
+        int result = test.kthFromEnd(2); 
+        
+        it will return 3
+
+
+```
+
+
+
+```
+
+        LinkedList test = new LinkedList();
+        test.append(1); /// index 4  head
+        test.append(2); /// index 3
+        test.append(3); /// index 2
+        test.append(4); /// index 1
+        test.append(5); /// index 0 tail
+        int result = test.kthFromEnd(5); 
+        
+        it will return -1 becouse the index is equla the size
+
+
+```
+
+
+```
+
+        LinkedList test = new LinkedList();
+        test.append(1); /// index 4  head
+        test.append(2); /// index 3
+        test.append(3); /// index 2
+        test.append(4); /// index 1
+        test.append(5); /// index 0 tail
+        int result = test.kthFromEnd(-2); 
+        
+        it will return -1
+
+
+```
+
+```
+
+        LinkedList test = new LinkedList();
+        test.append(1); /// index 0 head
+        int result = test.kthFromEnd(0); 
+        
+        it will return 1
+
+
+```
+
+
 
