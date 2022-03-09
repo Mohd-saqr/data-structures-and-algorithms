@@ -8,3 +8,4 @@
 | Challenge-04           	 |     Linked List Implementation     |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-04)        | 
 | Challenge-05           	 |      Code Challenge: Class 06      |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-05)        | 
 | Challenge-06           	 |      Code Challenge: Class 07      |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-06)        | 
+| Challenge-06           	 |      Code Challenge: Class 07      |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-07)        | 
