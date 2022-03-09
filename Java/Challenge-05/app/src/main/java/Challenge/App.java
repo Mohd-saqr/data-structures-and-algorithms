@@ -20,7 +20,7 @@ public class App {
         test.append(7);
         test.append(8);
 
-//        System.out.println(test.size/2);
+
 
         System.out.println(test.MiddleValueNode());
         test.ToString();
