@@ -135,8 +135,8 @@ public class LinkedList {
             }
         }
 
-        System.out.println(out+ "Null" );
-        return out + "Null" ;
+        System.out.println(out + "Null");
+        return out + "Null";
     }
 
 
@@ -176,9 +176,14 @@ public class LinkedList {
 
     public LinkedList zipLists(LinkedList list1, LinkedList list2) {
         LinkedList zipLinkedList = new LinkedList();
-        if (list1.size == 0 || list2.size == 0) {
+        if (list1.size == 0 && list2.size == 0) {
             System.out.println("can't zip empty List");
             return zipLinkedList;
+        }
+        if (list1.size == 0 && list2.size != 0) {
+            return list2;
+        } else if (list2.size == 0) {
+            return list1;
         }
         Node pointer1 = list1.head;
         Node pointer2 = list2.head;
