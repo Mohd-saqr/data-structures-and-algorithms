@@ -7,7 +7,7 @@ i think my code is not short because i replace while loop by use if statement
 
 ## Whiteboard Process
 
-![zipLists](https://user-images.githubusercontent.com/97642724/157530345-8e60de5c-bb5a-4f53-bb33-251fb38e0171.png)
+![zipLists](https://user-images.githubusercontent.com/97642724/158077991-7ced3fd3-080a-4cf2-af4e-0a60ef593274.png)
 
 ## Approach & Efficiency
 

@@ -11,23 +11,13 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-        LinkedList list1 = new LinkedList();
-        list1.append(0);
-        list1.append(3);
-        list1.append(2);
-        list1.append(1);
-        list1.append(3);
-        list1.append(2);
-        list1.append(1);
-        list1.append(3);
-        list1.append(2);
-
-        list1.ToString();
-        LinkedList list2= new LinkedList();
+        LinkedList list2 = new LinkedList();
+        list2.append(5);
+        list2.append(9);
+        LinkedList list1= new LinkedList();
         list2.append(5);
         list2.append(9);
         list2.append(4);
-        list2.ToString();
         LinkedList out = new LinkedList();
         out=out.zipLists(list1,list2);
         out.ToString();
