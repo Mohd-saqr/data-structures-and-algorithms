@@ -22,13 +22,13 @@ public class LinkedList {
             tail.next = newNode;
             this.tail = newNode;
             size++;
+            System.out.println(this.head.value);
         }
     }
 
     public void insertBefore(int value, int newValue) {
         Node newNode = new Node(newValue);
         Node pointer = this.head;
-
         if (includes(value)) {
             while (pointer != null) {
                 if (head.value == value) {
@@ -46,7 +46,6 @@ public class LinkedList {
                 }
                 pointer = pointer.next;
             }
-
         } else {
             System.out.println("The value is not exists");
         }
@@ -169,6 +168,15 @@ public class LinkedList {
 
         return pointer.value;
 
+    }
+
+    public boolean isPalindrome(){
+        if (this.size>1){
+            if (this.head.value==this.tail.value){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

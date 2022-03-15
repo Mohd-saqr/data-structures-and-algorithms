@@ -11,10 +11,10 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-        LinkedList list2 = new LinkedList();
-        list2.append(5);
-        list2.append(9);
-        LinkedList list1= new LinkedList();
+        LinkedList list1 = new LinkedList();
+        list1.append(5);
+        list1.append(9);
+        LinkedList list2= new LinkedList();
         list2.append(5);
         list2.append(9);
         list2.append(4);

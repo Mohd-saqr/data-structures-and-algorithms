@@ -202,9 +202,13 @@ public class LinkedList {
             zipLinkedList.append(pointer2.value);
             pointer1 = pointer1.next;
             pointer2 = pointer2.next;
+
         }
+
+
         return zipLinkedList;
     }
+
 
 
 }
