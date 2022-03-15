@@ -10,21 +10,14 @@ public class App {
 
     public static void main(String[] args) {
         LinkedList test = new LinkedList();
-        test.append(0);
-        test.append(1);
-        test.append(2);
-        test.append(3);
-        test.append(4);
-        test.append(5);
         test.append(6);
         test.append(7);
         test.append(8);
+        test.append(7);
+        test.append(6);
+        System.out.println(test.head.value);
 
-
-
-        System.out.println(test.MiddleValueNode());
-        test.ToString();
-
+        System.out.println(test.isPalindrome());
 
     }
 }
