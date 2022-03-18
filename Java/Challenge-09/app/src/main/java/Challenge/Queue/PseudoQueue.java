@@ -43,13 +43,13 @@ public class PseudoQueue {
         Node pointer = stackDs2.top;
         String out = "[";
         while (pointer != null) {
-            if (pointer.next==null){
-                out+=pointer.value;
+            if (pointer.next == null) {
+                out += pointer.value;
                 break;
             }
-            out +=  pointer.value  +", ";
+            out += pointer.value + ", ";
             pointer = pointer.next;
         }
-        return out +"]";
+        return out + "]";
     }
 }
