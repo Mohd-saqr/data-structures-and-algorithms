@@ -12,15 +12,44 @@ public class App {
         System.out.println(new App().getGreeting());
 
         LinkedList list1 = new LinkedList();
-        list1.append(5);
-        list1.append(9);
-        LinkedList list2= new LinkedList();
-        list2.append(5);
-        list2.append(9);
-        list2.append(4);
-        LinkedList out = new LinkedList();
-        out=out.zipLists(list1,list2);
-        out.ToString();
-//        System.out.println(out.size);
+        list1.append(1);
+        list1.append(2);
+
+        System.out.println(IsVa(list1.head));
+    }
+
+    public static boolean IsVa(Node head) {
+        if (head==null||head.next==null){
+            return false;
+        }
+        Node p = head;
+        int size = 1;
+        while (head.next != null) {
+            size++;
+            head = head.next;
+        }
+        System.out.println(size);
+        int count1 = 0;
+        int count2 = 1;
+        int split = size / 2;
+        Node current = p;
+        Node reversNode = p;
+        while (count1 < split) {
+            int index = (size - count1);
+            while (count2 < index) {
+                reversNode = reversNode.next;
+                count2++;
+            }
+            if (reversNode.value != current.value) {
+                return false;
+            }
+            count1++;
+            current = current.next;
+            count2 = 1;
+            reversNode = p;
+        }
+
+        return true;
     }
 }
+
