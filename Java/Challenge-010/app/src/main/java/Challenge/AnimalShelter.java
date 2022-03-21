@@ -9,11 +9,11 @@ public class AnimalShelter {
     ArrayList<String> animalList = new ArrayList<>();
 
     public void enqueue(String animal){
-    if (animal!="dog" || animal!="cat"){
-        System.out.println("please put dog or cat");
+    if (animal=="dog" || animal=="cat"){
+        animalList.add(animal);
 
     }else {
-        animalList.add(animal);
+        System.out.println("please ");
     }
     }
 
@@ -25,12 +25,12 @@ public class AnimalShelter {
     }
 
     public String  dequeue(String animal){
-        if (animal!="dog" || animal!="cat"){
-            System.out.println("please put dog or cat");
-    return "please put dog or cat";
-        }else {
+        if (animal=="dog" || animal=="cat"){
             animalList.remove(animal);
-            return animal;
+    return animal;
+        }else {
+
+            return"please put dog or cat";
         }
     }
 
