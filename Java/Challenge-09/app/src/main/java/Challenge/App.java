@@ -38,7 +38,9 @@ public class App {
         pseudoQueue.enqueue(30);
         System.out.println(pseudoQueue.dequeue());
         System.out.println(pseudoQueue);
+        System.out.println("***************************");
         // build in  Queue for test my code .
+
         Queue queue = new ArrayDeque();
         queue.add(10);
         queue.add(20);
