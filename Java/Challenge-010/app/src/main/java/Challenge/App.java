@@ -4,6 +4,7 @@
 package Challenge;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class App {
     public String getGreeting() {
@@ -11,11 +12,15 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        Cat cat = new Cat("test1");
+        Cat cat2 = new Cat("test2");
         AnimalShelter animalShelter = new AnimalShelter();
-        animalShelter.enqueue("cat");
-        animalShelter.enqueue("dog");
-        animalShelter.dequeue("cat");
-        System.out.println(animalShelter.toString());
+        animalShelter.enqueue(cat);
+        animalShelter.enqueue(cat2);
+        System.out.println(animalShelter.dequeue("cat"));
+
+        System.out.println(animalShelter);
+
     }
 }
