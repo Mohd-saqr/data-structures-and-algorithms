@@ -14,42 +14,73 @@ public class App {
         LinkedList list1 = new LinkedList();
         list1.append(1);
         list1.append(2);
+        LinkedList l2= new LinkedList();
+        l2.append(1);
+        l2.append(2);
 
-        System.out.println(IsVa(list1.head));
+        addTwoNumbers(l2.head,list1.head);
+
     }
 
-    public static boolean IsVa(Node head) {
-        if (head==null||head.next==null){
-            return false;
-        }
-        Node p = head;
-        int size = 1;
-        while (head.next != null) {
-            size++;
-            head = head.next;
-        }
-        System.out.println(size);
-        int count1 = 0;
-        int count2 = 1;
-        int split = size / 2;
-        Node current = p;
-        Node reversNode = p;
-        while (count1 < split) {
-            int index = (size - count1);
-            while (count2 < index) {
-                reversNode = reversNode.next;
-                count2++;
-            }
-            if (reversNode.value != current.value) {
-                return false;
-            }
-            count1++;
-            current = current.next;
-            count2 = 1;
-            reversNode = p;
-        }
+//    public static boolean IsVa(Node head) {
+//        if (head==null||head.next==null){
+//            return false;
+//        }
+//        Node p = head;
+//        int size = 1;
+//        while (head.next != null) {
+//            size++;
+//            head = head.next;
+//        }
+//        int count1 = 0;
+//        int count2 = 1;
+//        int split = size / 2;
+//        Node current = p;
+//        Node reversNode = p;
+//        while (count1 < split) {
+//            int index = (size - count1);
+//            while (count2 < index) {
+//                reversNode = reversNode.next;
+//                count2++;
+//            }
+//            if (reversNode.value != current.value) {
+//                return false;
+//            }
+//            count1++;
+//            current = current.next;
+//            count2 = 1;
+//            reversNode = p;
+//        }
+//
+//        return true;
+//    }
 
-        return true;
+    public  static  Node addTwoNumbers(Node l1, Node l2) {
+        int rest=0;
+        int sum;
+        Node out = new Node (0);
+        boolean firstO=true;
+        while(l1!=null || l2!=null){
+            if(l1==null){
+                sum=l2.value+rest;
+            }else if(l2==null){
+                sum=l1.value+rest;
+            }else{
+                sum =l1.value +l2.value;
+                if(sum>9){
+                    rest=sum-10;
+                }
+            }
+            if(firstO){
+                out.value=sum+rest;
+                firstO=false;
+            }
+
+            out.next=new Node (sum+rest);
+            l2=l2.next;
+            l1=l1.next;
+        }
+        return out;
     }
 }
 
