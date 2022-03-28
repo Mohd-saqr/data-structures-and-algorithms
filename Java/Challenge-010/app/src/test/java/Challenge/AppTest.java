@@ -15,7 +15,7 @@ class AppTest {
     void AnimalEnqueue() {
         Cat cat = new Cat("Luna");
         animalShelter.enqueue(cat);
-        String result = "[Cat{name='Luna'}]";
+        String result = "Node{value=Cat{name='Luna'}, next=null}";
         assertEquals(result,animalShelter.getCats().toString());
 
     }
@@ -73,6 +73,7 @@ class AppTest {
         animalShelter.enqueue(dog0);
         animalShelter.enqueue(dog1);
         animalShelter.enqueue(dog2);
-        assertEquals("AnimalShelter{cats=[Cat{name='Luna'}, Cat{name='Milo'}], dogs=[Dog{name='OSCAR'}, Dog{name='OSCAR'}, Dog{name='OSCAR'}]}",animalShelter.toString());
+        assertEquals("AnimalShelter{cats=Node{value=Cat{name='Luna'}, next=Node{value=Cat{name='Milo'}, next=null}}, dogs=Node{value=Dog{name='OSCAR'}, next=Node{value=Dog{name='OSCAR'}, next=Node{value=Dog{name='OSCAR'}, next=null}}}}"
+                ,animalShelter.toString());
     }
 }
