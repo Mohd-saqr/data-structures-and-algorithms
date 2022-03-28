@@ -15,8 +15,8 @@ class AppTest {
     void AnimalEnqueue() {
         Cat cat = new Cat("Luna");
         animalShelter.enqueue(cat);
-        String result = "Node{value=Cat{name='Luna'}, next=null}";
-        assertEquals(result,animalShelter.getCats().toString());
+        String result = "[Cat{name='Luna'}]";
+        assertEquals(result,animalShelter.getCatStackHelper().toString());
 
     }
     @Test
@@ -65,15 +65,15 @@ class AppTest {
         Cat cat0 = new Cat("Luna");
         Cat cat1 = new Cat("Milo");
         Cat cat2 = new Cat("Oliver");
-        Dog dog0= new Dog("OSCAR");
-        Dog dog1= new Dog("OSCAR");
-        Dog dog2= new Dog("OSCAR");
+        Dog dog0= new Dog("OSCAR1");
+        Dog dog1= new Dog("OSCAR2");
+        Dog dog2= new Dog("OSCAR3");
         animalShelter.enqueue(cat0);
         animalShelter.enqueue(cat1);
         animalShelter.enqueue(dog0);
         animalShelter.enqueue(dog1);
         animalShelter.enqueue(dog2);
-        assertEquals("AnimalShelter{cats=Node{value=Cat{name='Luna'}, next=Node{value=Cat{name='Milo'}, next=null}}, dogs=Node{value=Dog{name='OSCAR'}, next=Node{value=Dog{name='OSCAR'}, next=Node{value=Dog{name='OSCAR'}, next=null}}}}"
+        assertEquals("AnimalShelter{cats=[Cat{name='Luna'}, Cat{name='Milo'}], dogs=[Dog{name='OSCAR1'}, Dog{name='OSCAR2'}, Dog{name='OSCAR3'}]}"
                 ,animalShelter.toString());
     }
 }

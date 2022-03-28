@@ -1,8 +1,9 @@
-package Challenge.LinkledList;
+package Challenge.Node;
 
 public class Node<T> {
-    T value;
-    Node next;
+ public   T value;
+ public Node next ;
+
 
     public Node(T value) {
         this.value = value;
@@ -16,3 +17,5 @@ public class Node<T> {
                 '}';
     }
 }
+
+
