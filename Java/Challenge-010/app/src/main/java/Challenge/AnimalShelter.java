@@ -1,49 +1,71 @@
 package Challenge;
+import Challenge.Node.Node;
+import Challenge.Stack.StackDs;
 
-import Challenge.LinkledList.LinkedListDs;
-
-import java.util.LinkedList;
 
 public class AnimalShelter {
 
-//    private final LinkedList<Dog> dogs = new LinkedList<>();
-    private final LinkedListDs<Cat> cats= new LinkedListDs();
-    private final LinkedListDs<Dog> dogs = new LinkedListDs();
+    private final StackDs<Cat> cats = new StackDs<>();
+    private final StackDs<Cat> catStackHelper = new StackDs<>();
+    private final StackDs<Dog> dogs = new StackDs<>();
+    private final StackDs<Dog> dogStackHelper = new StackDs<>();
 
-    public LinkedListDs<Cat> getCats() {
-        return cats;
+
+    public StackDs<Cat> getCatStackHelper() {
+        return catStackHelper;
     }
 
-    public LinkedListDs<Dog> getDogs() {
-        return dogs;
+    public StackDs<Dog> getDogStackHelper() {
+        return dogStackHelper;
     }
 
     public AnimalShelter() {
     }
 
     public void enqueue(AnimalShelter animal) {
-        if (animal instanceof Cat) cats.append((Cat) animal);
-        else if (animal instanceof Dog) dogs.append((Dog) animal);
+        if (animal instanceof Cat) enqueue((Cat) animal);
+        else if (animal instanceof Dog) enqueue((Dog) animal);
         else throw new IllegalArgumentException("Animal must be cat or dog");
+
     }
+
 
     public AnimalShelter dequeue(String pref) {
         if (pref == "cat") {
-            Cat cat = cats.peek();
-            cats.poll();
+            Cat cat = catStackHelper.peek();
+            catStackHelper.pop();
             return cat;
         } else if (pref == "dog") {
-            Dog dog = dogs.peek();
-            dogs.poll();
+            Dog dog = dogStackHelper.peek();
+            dogStackHelper.pop();
             return dog;
         } else return null;
     }
+    public void enqueue(Cat value) {
+        cats.Push(value);
+        Node<Cat> pointer = cats.top;
+        catStackHelper.top = null;
+        while (pointer != null) {
+            catStackHelper.Push(pointer.value);
+            pointer = pointer.next;
+        }
 
+    }
+    public void enqueue(Dog value) {
+        dogs.Push(value);
+        Node<Dog> pointer = dogs.top;
+        dogStackHelper.top = null;
+        while (pointer != null) {
+            dogStackHelper.Push(pointer.value);
+            pointer = pointer.next;
+        }
+
+    }
     @Override
     public String toString() {
         return "AnimalShelter{" +
-                "cats=" + cats +
-                ", dogs=" + dogs +
+                "cats=" + catStackHelper +
+                ", dogs=" + dogStackHelper +
                 '}';
     }
 }
