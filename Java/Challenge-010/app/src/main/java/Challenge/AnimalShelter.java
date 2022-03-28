@@ -1,17 +1,20 @@
 package Challenge;
 
-import java.util.ArrayList;
+import Challenge.LinkledList.LinkedListDs;
+
 import java.util.LinkedList;
 
 public class AnimalShelter {
-    private final LinkedList<Cat> cats = new LinkedList<>();
-    private final LinkedList<Dog> dogs = new LinkedList<>();
 
-    public LinkedList<Cat> getCats() {
+//    private final LinkedList<Dog> dogs = new LinkedList<>();
+    private final LinkedListDs<Cat> cats= new LinkedListDs();
+    private final LinkedListDs<Dog> dogs = new LinkedListDs();
+
+    public LinkedListDs<Cat> getCats() {
         return cats;
     }
 
-    public LinkedList<Dog> getDogs() {
+    public LinkedListDs<Dog> getDogs() {
         return dogs;
     }
 
@@ -19,8 +22,8 @@ public class AnimalShelter {
     }
 
     public void enqueue(AnimalShelter animal) {
-        if (animal instanceof Cat) cats.add((Cat) animal);
-        else if (animal instanceof Dog) dogs.add((Dog) animal);
+        if (animal instanceof Cat) cats.append((Cat) animal);
+        else if (animal instanceof Dog) dogs.append((Dog) animal);
         else throw new IllegalArgumentException("Animal must be cat or dog");
     }
 

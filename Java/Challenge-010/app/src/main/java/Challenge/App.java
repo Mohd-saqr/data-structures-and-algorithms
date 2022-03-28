@@ -18,7 +18,7 @@ public class App {
         AnimalShelter animalShelter = new AnimalShelter();
         animalShelter.enqueue(cat);
         animalShelter.enqueue(cat2);
-        System.out.println(animalShelter.dequeue("cat"));
+//        System.out.println(animalShelter);
 
         System.out.println(animalShelter);
 
