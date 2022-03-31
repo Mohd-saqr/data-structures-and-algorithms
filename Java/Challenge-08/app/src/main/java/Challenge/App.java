@@ -16,18 +16,23 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-        StackDs stackDs = new StackDs();
-        stackDs.Push("mohammed");
-        stackDs.Push("ah");
-        System.out.println("-----------------------------------------------------------");
-
+//        System.out.println(new App().getGreeting());
+//        StackDs stackDs = new StackDs();
+//        stackDs.Push("mohammed");
+//        stackDs.Push("ah");
+//        System.out.println("-----------------------------------------------------------");
+//
+//        QueueDs queueDs = new QueueDs();
+//        queueDs.enqueue(10);
+//        queueDs.enqueue(20);
+//        queueDs.enqueue(30);
+//        queueDs.dequeue();
+//        System.out.println(queueDs.peek());
+//        System.out.println( queueDs.toString());
         QueueDs queueDs = new QueueDs();
-        queueDs.enqueue(10);
-        queueDs.enqueue(20);
-        queueDs.enqueue(30);
-        queueDs.dequeue();
-        System.out.println(queueDs.peek());
-        System.out.println( queueDs.toString());
+        queueDs.enqueue("mohammed");
+        queueDs.enqueue("kahled");
+        queueDs.enqueue("ahmad");
+        queueDs.
     }
 }

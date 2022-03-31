@@ -3,14 +3,40 @@
  */
 package Challenge;
 
+
+
+import Challenge.Queue.QueueDs;
+
+
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-
-
+        System.out.println(DuckDuckGoose("A, B, C, D, E ", 3));
 
     }
+
+
+
+    public static String DuckDuckGoose(String s, int k) {
+        QueueDs<String>queue = new QueueDs<>();
+        int count =1;
+        for (String st:s.split(",")) {
+            queue.enqueue(st);
+        }
+        while (queue.size>1) {
+            if (count==k){
+                queue.dequeue();
+                count=0;
+            }else {
+                queue.enqueue(queue.dequeue());
+            }
+            count++;
+        }
+        return queue.peek();
+    }
+
 }
