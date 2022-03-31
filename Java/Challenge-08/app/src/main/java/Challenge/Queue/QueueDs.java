@@ -2,7 +2,9 @@ package Challenge.Queue;
 
 import Challenge.Node.Node;
 
+import java.util.ArrayDeque;
 import java.util.NoSuchElementException;
+import java.util.Queue;
 
 public class QueueDs<T> {
 
@@ -50,6 +52,35 @@ public class QueueDs<T> {
     public boolean IsEmpty() {
         return size == 0;
     }
+
+
+
+    public  String DuckDuckGoose(String s, int k) {
+        int count =1;
+        int index=k-1;
+        String [] names =s.split(",");
+
+        while (this.size>1){
+            if (index>=names.length){
+                index=0;
+            }
+            for (int i=0;i<names.length;i++) {
+                if (count == k) {
+                    this.(names[index]);
+                    count = 0;
+                    index++;
+                }
+                count++;
+            }
+
+            index++;
+
+        }
+        System.out.println(queue.toString());
+        return queue.peek();
+    }
+
+
 
     @Override
     public String toString() {
