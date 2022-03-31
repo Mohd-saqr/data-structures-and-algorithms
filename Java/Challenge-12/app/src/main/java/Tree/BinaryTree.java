@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class BinaryTree<T extends Comparable<T>> {
     Node<T> root;
-    int size;
     private ArrayList<T> arr = new ArrayList<>();
+
 
     public BinaryTree() {
     }
@@ -31,7 +31,6 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
 
-
     public void inOrder() {
         Node<T> node = this.root;
         if (node == null) {
@@ -50,7 +49,6 @@ public class BinaryTree<T extends Comparable<T>> {
         PrintNodeData(node);
         inOrderHelper(node.getRight());
     }
-
 
 
     public ArrayList<T> postOrder() {
@@ -76,11 +74,35 @@ public class BinaryTree<T extends Comparable<T>> {
         return arr;
     }
 
+    public int getMax() {
+        Node<T> node = root;
+
+        if (node != null) return getMax(node);
+        else return 0;
+    }
+
+
+
+    private int getMax(Node<T> node) {
+
+        int max = (Integer) node.getData();
+        if(node.getLeft() != null) {
+            max = Math.max(max, getMax(node.getLeft()));
+        }
+        if(node.getRight() != null) {
+            max = Math.max(max, getMax(node.getRight()));
+        }
+        return max;
+
+
+    }
+
 
     public boolean isEmpty() {
         return this.root == null;
     }
-    private void PrintNodeData(Node<T> node){
-        System.out.print(node.getData() +" -> ");
+
+    private void PrintNodeData(Node<T> node) {
+        System.out.print(node.getData() + " -> ");
     }
 }

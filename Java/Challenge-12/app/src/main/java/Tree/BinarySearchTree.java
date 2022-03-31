@@ -4,11 +4,13 @@ import NodeTree.Node;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
     private boolean contain = false;
+   public int size;
 
 
     public void Add(T value) {
         if (isEmpty()) {
             this.root = new Node<>(value);
+            size++;
         } else addHelper(value, this.root);
 
     }
@@ -20,6 +22,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
                 addHelper(value, node.getRight());
             } else {
                 node.setRight(new Node<>(value));
+                size++;
 
             }
         } else if (value.compareTo(node.getData()) < 0) {
@@ -27,6 +30,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
                 addHelper(value, node.getLeft());
             } else {
                 node.setLeft(new Node<>(value));
+                size++;
             }
         }
     }
