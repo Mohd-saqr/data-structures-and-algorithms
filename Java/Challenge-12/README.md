@@ -39,3 +39,30 @@ third use method of the depth first traversals
 ``stringBinarySearchTree.inOrder();``
 
 
+
+
+# code challenge 16
+
+--------------------
+
+##  Challenge Summary
+we want to create Getmax method to get the max value in the binary tree
+
+## Whiteboard Process
+![Whiteboard](https://user-images.githubusercontent.com/97642724/161041772-86eed48c-7573-4f52-8dc8-f5459d49cce0.png)
+
+## Approach & Efficiency
+time O(log(n)) space O(1)
+
+## Solution
+
+after create object and added som data just call method 
+`BinarySearchTree<Integer> stringBinarySearchTree = new BinarySearchTree<>();
+    stringBinarySearchTree.Add(10);
+    stringBinarySearchTree.Add(20);
+    stringBinarySearchTree.Add(600);
+    stringBinarySearchTree.Add(500);
+   stringBinarySearchTree.Add(40);
+    stringBinarySearchTree.getMax()`
+
+

@@ -32,4 +32,27 @@ class AppTest {
         tree.Add(20);
         tree.Add(30);
     }
+
+    @Test
+    void ContainTest(){
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.Add(10);
+        tree.Add(20);
+        tree.Add(30);
+        assertEquals(tree.Contains(20),true);
+        assertEquals(tree.Contains(40),false);
+    }
+
+    @Test
+    void testGetMax(){
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.Add(10);
+        tree.Add(20);
+        tree.Add(600);
+        tree.Add(30);
+        tree.Add(1000);
+        tree.Add(80);
+
+        assertEquals(1000,tree.getMax());
+    }
 }
