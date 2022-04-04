@@ -1,100 +1,126 @@
 package Tree;
 
-import NodeTree.Node;
+import NodeTree.BTNode;
+import QueueDs.QueueDs;
+
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BinaryTree<T extends Comparable<T>> {
-    Node<T> root;
-    private ArrayList<T> arr = new ArrayList<>();
+    BTNode<T> root;
+    private List<T> arr = new ArrayList<>();
+    private List<T> breadthFirst = new ArrayList<>();
 
 
     public BinaryTree() {
     }
 
     public void preOrder() {
-        Node<T> node = this.root;
-        if (node == null) {
+        BTNode<T> BTNode = this.root;
+        if (BTNode == null) {
             return;
         }
-        preOrderHelper(node);
+        preOrderHelper(BTNode);
 
     }
 
-    private void preOrderHelper(Node<T> node) {
-        if (node == null) {
+    private void preOrderHelper(BTNode<T> BTNode) {
+        if (BTNode == null) {
             return;
         }
-        PrintNodeData(node);
-        preOrderHelper(node.getLeft());
-        preOrderHelper(node.getRight());
+        PrintNodeData(BTNode);
+        preOrderHelper(BTNode.getLeft());
+        preOrderHelper(BTNode.getRight());
     }
 
 
     public void inOrder() {
-        Node<T> node = this.root;
-        if (node == null) {
+        BTNode<T> BTNode = this.root;
+        if (BTNode == null) {
             return;
         }
-        inOrderHelper(node);
+        inOrderHelper(BTNode);
 
     }
 
-    private void inOrderHelper(Node<T> node) {
-        if (node == null) {
+    private void inOrderHelper(BTNode<T> BTNode) {
+        if (BTNode == null) {
             return;
         }
 
-        inOrderHelper(node.getLeft());
-        PrintNodeData(node);
-        inOrderHelper(node.getRight());
+        inOrderHelper(BTNode.getLeft());
+        PrintNodeData(BTNode);
+        inOrderHelper(BTNode.getRight());
     }
 
 
-    public ArrayList<T> postOrder() {
+    public List<T> postOrder() {
 
 
-        Node<T> node = this.root;
-        if (node == null) {
+        BTNode<T> BTNode = this.root;
+        if (BTNode == null) {
             return null;
         }
 
 
-        return postOrderHelper(node);
+        return postOrderHelper(BTNode);
     }
 
-    public ArrayList<T> postOrderHelper(Node<T> node) {
+    public List<T> postOrderHelper(BTNode<T> BTNode) {
 
-        if (node == null) {
+        if (BTNode == null) {
             return arr;
         }
-        postOrderHelper(node.getLeft());
-        postOrderHelper(node.getRight());
-        arr.add(((T) node.getData()));
+        postOrderHelper(BTNode.getLeft());
+        postOrderHelper(BTNode.getRight());
+        arr.add(((T) BTNode.getData()));
         return arr;
     }
 
     public int getMax() {
-        Node<T> node = root;
+        BTNode<T> BTNode = root;
 
-        if (node != null) return getMax(node);
+        if (BTNode != null) return getMax(BTNode);
         else return 0;
     }
 
 
 
-    private int getMax(Node<T> node) {
+    private int getMax(BTNode<T> BTNode) {
 
-        int max = (Integer) node.getData();
-        if(node.getLeft() != null) {
-            max = Math.max(max, getMax(node.getLeft()));
+        int max = (Integer) BTNode.getData();
+        if(BTNode.getLeft() != null) {
+            max = Math.max(max, getMax(BTNode.getLeft()));
         }
-        if(node.getRight() != null) {
-            max = Math.max(max, getMax(node.getRight()));
+        if(BTNode.getRight() != null) {
+            max = Math.max(max, getMax(BTNode.getRight()));
         }
         return max;
 
 
+    }
+
+    public List<T> breadthFirst() throws InterruptedException {
+        if (root != null) {
+            QueueDs<BTNode<T>> queue = new QueueDs<BTNode<T>>();
+            queue.enqueue(root);
+            BTNode BTNode;
+            while (!queue.IsEmpty()) {
+                BTNode = queue.dequeue();
+                breadthFirst.add((T) BTNode.getData());
+                if (BTNode.getLeft() != null) {
+                    queue.enqueue(BTNode.getLeft());
+                }
+
+                if (BTNode.getRight() != null) {
+                    queue.enqueue(BTNode.getRight());
+                }
+            }
+        } else {
+            System.out.println("Tree empty");
+        }
+        return breadthFirst;
     }
 
 
@@ -102,7 +128,9 @@ public class BinaryTree<T extends Comparable<T>> {
         return this.root == null;
     }
 
-    private void PrintNodeData(Node<T> node) {
-        System.out.print(node.getData() + " -> ");
+    private void PrintNodeData(BTNode<T> BTNode) {
+        System.out.print(BTNode.getData() + " -> ");
     }
+
+
 }

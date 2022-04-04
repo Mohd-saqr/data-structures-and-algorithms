@@ -55,4 +55,16 @@ class AppTest {
 
         assertEquals(1000,tree.getMax());
     }
+
+    @Test
+    void testBreadthFirst() throws InterruptedException {
+        BinarySearchTree<Integer> stringBinarySearchTree = new BinarySearchTree<>();
+        stringBinarySearchTree.Add(20);
+        stringBinarySearchTree.Add(500);
+        stringBinarySearchTree.Add(10);
+        stringBinarySearchTree.Add(600);
+        stringBinarySearchTree.Add(40);
+            // this method will return a list of value but i test it in string method .
+        assertEquals("[20, 10, 500, 40, 600]",stringBinarySearchTree.breadthFirst().toString());
+    }
 }

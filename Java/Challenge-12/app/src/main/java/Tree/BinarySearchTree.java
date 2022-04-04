@@ -1,6 +1,6 @@
 package Tree;
 
-import NodeTree.Node;
+import NodeTree.BTNode;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
     private boolean contain = false;
@@ -9,50 +9,51 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
 
     public void Add(T value) {
         if (isEmpty()) {
-            this.root = new Node<>(value);
+            this.root = new BTNode<>(value);
             size++;
         } else addHelper(value, this.root);
 
     }
 
-    private void addHelper(T value, Node<T> node) {
+    private void addHelper(T value, BTNode<T> BTNode) {
 
-        if (value.compareTo((T) node.getData()) > 0) {
-            if (node.getRight() != null) {
-                addHelper(value, node.getRight());
+        if (value.compareTo((T) BTNode.getData()) > 0) {
+            if (BTNode.getRight() != null) {
+                addHelper(value, BTNode.getRight());
             } else {
-                node.setRight(new Node<>(value));
+                BTNode.setRight(new BTNode<>(value));
                 size++;
 
             }
-        } else if (value.compareTo(node.getData()) < 0) {
-            if (node.getLeft() != null) {
-                addHelper(value, node.getLeft());
+        } else if (value.compareTo(BTNode.getData()) < 0) {
+            if (BTNode.getLeft() != null) {
+                addHelper(value, BTNode.getLeft());
             } else {
-                node.setLeft(new Node<>(value));
+                BTNode.setLeft(new BTNode<>(value));
                 size++;
             }
         }
     }
 
     public boolean Contains(T value) {
-        Node<T> node = this.root;
+        this.contain=false;
+        BTNode<T> BTNode = this.root;
         if (isEmpty()) return false;
 
-        return ContainsHelper(value, node);
+        return ContainsHelper(value, BTNode);
     }
 
-    private boolean ContainsHelper(T value, Node<T> node) {
+    private boolean ContainsHelper(T value, BTNode<T> BTNode) {
 
-        if (value.compareTo(node.getData()) == 0) {
+        if (value.compareTo(BTNode.getData()) == 0) {
             contain = true;
-        } else if (value.compareTo((T) node.getData()) > 0) {
-            if (node.getRight() != null) {
-                ContainsHelper(value, node.getRight());
+        } else if (value.compareTo((T) BTNode.getData()) > 0) {
+            if (BTNode.getRight() != null) {
+                ContainsHelper(value, BTNode.getRight());
             }
-        } else if (value.compareTo(node.getData()) < 0) {
-            if (node.getLeft() != null) {
-                ContainsHelper(value, node.getLeft());
+        } else if (value.compareTo(BTNode.getData()) < 0) {
+            if (BTNode.getLeft() != null) {
+                ContainsHelper(value, BTNode.getLeft());
             }
         }
         return contain;

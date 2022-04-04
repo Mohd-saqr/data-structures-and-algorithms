@@ -1,5 +1,5 @@
 # Trees
-the tree is type of non-linear data structures it contain Node and each node has Node left and node right and each nod connect by other .
+the tree is type of non-linear data structures it contain Node and each BTNode has Node left and BTNode right and each nod connect by other .
 
 ## Challenge
 we want to create binary tree and sum method of depth  traversal with type 
@@ -64,5 +64,32 @@ after create object and added som data just call method
     stringBinarySearchTree.Add(500);
    stringBinarySearchTree.Add(40);
     stringBinarySearchTree.getMax()`
+
+
+
+# challenege 17 
+
+# Challenge Summary
+we want to create a breadth first for binary tree.
+
+## Whiteboard Process
+![Whiteboard (2)](https://user-images.githubusercontent.com/97642724/161599692-8ff2c2e1-b0f6-4347-a8b5-2ff17fac1c09.png)
+
+
+## Approach & Efficiency
+Time = O(Log(n)) , Space = O(1)
+
+## Solution
+create a binary tree and just call the method breadthFirst()
+````
+BinarySearchTree<Integer> stringBinarySearchTree = new BinarySearchTree<>();
+stringBinarySearchTree.Add(10);
+stringBinarySearchTree.Add(20);
+stringBinarySearchTree.Add(600);
+stringBinarySearchTree.Add(500);
+stringBinarySearchTree.Add(40);
+stringBinarySearchTree.breadthFirst();
+````
+
 
 
