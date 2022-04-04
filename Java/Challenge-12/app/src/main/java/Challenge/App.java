@@ -3,23 +3,21 @@
  */
 package Challenge;
 
-import NodeTree.Node;
 import Tree.BinarySearchTree;
-import Tree.BinaryTree;
 
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println(new App().getGreeting());
         BinarySearchTree<Integer> stringBinarySearchTree = new BinarySearchTree<>();
          stringBinarySearchTree.Add(10);
         stringBinarySearchTree.Add(20);
-        stringBinarySearchTree.Add(600);
-        stringBinarySearchTree.Add(500);
-        stringBinarySearchTree.Add(40);
+        stringBinarySearchTree.Add(30);
+//        stringBinarySearchTree.Add(500);
+//        stringBinarySearchTree.Add(40);
         stringBinarySearchTree.preOrder();
         System.out.println("---------------------------\n" + "postOrder"); // it returns an array
         System.out.println(stringBinarySearchTree.postOrder());
@@ -27,9 +25,9 @@ public class App {
         stringBinarySearchTree.inOrder();
 
 
-        System.out.println(stringBinarySearchTree.Contains(10));
+        System.out.println(stringBinarySearchTree.Contains(40));
         System.out.println(stringBinarySearchTree.size);
-        System.out.println(stringBinarySearchTree.getMax());
+        System.out.println(stringBinarySearchTree.breadthFirst());
     }
 
 
