@@ -14,4 +14,4 @@
 | Challenge-10          	  | First-in, First out Animal Shelter |       [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-010)        |
 |  Challenge-11        	   |     Multi-bracket Validation.      |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-11)        |
 |  Challenge-12        	   |            binary tree             |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-12)        |
-|  Challenge-12        	   |            tree-breadth-first             |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-13)        |
+|  Challenge-12        	   |            tree-breadth-first             |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-12)        |
