@@ -6,8 +6,8 @@ import java.util.NoSuchElementException;
 
 public class QueueDs<T> {
 
-    public Node front;
-    public Node rear;
+    public Node<T> front;
+    public Node<T> rear;
     public int size = 0;
 
 
