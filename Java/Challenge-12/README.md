@@ -91,5 +91,31 @@ stringBinarySearchTree.Add(40);
 stringBinarySearchTree.breadthFirst();
 ````
 
+# CHALLENGE 18 
+## Challenge Summary
 
+we want create first K-array tree and create tree-fizz-buzz method it return new k-array tree
+and If the value is divisible by 3, replace the value with “Fizz” or
+If the value is divisible by 5, replace the value with “Buzz” or
+If the value is divisible by 3 and 5, replace the value with “FizzBuzz” or
+If the value is not divisible by 3 or 5, simply turn the number into a String.
+## Whiteboard Process
+![Whiteboard (3)](https://user-images.githubusercontent.com/97642724/162096392-8c070a3a-a341-476c-a118-72edff41e449.png)
+
+
+## Approach & Efficiency
+time O(n) and space O(n)
+
+## Solution
+```
+first create object from NArray_tree and add some Node
+NArray_tree tree = new NArray_tree<>();
+tree.setRoot(new N_arrayNode<Integer>(30));
+tree.getRoot().getChildren().add(new N_arrayNode<Integer>(9));
+tree.getRoot().getChildren().add(new N_arrayNode<Integer>(25));
+tree.getRoot().getChildren().add(new N_arrayNode<Integer>(2));
+N_arrayNode o= (N_arrayNode) tree.getRoot().children.get(0);
+o.children.add(new N_arrayNode<Integer>(40));
+tree.treeFizzBuzz(tree).printData(); // this method i created for see the output
+```
 

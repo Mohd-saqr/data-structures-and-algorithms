@@ -3,7 +3,8 @@
  */
 package Challenge;
 
-import Tree.BinarySearchTree;
+import NodeTree.N_arrayNode;
+import Tree.NArray_tree;
 
 public class App {
     public String getGreeting() {
@@ -11,23 +12,32 @@ public class App {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(new App().getGreeting());
-        BinarySearchTree<Integer> stringBinarySearchTree = new BinarySearchTree<>();
-         stringBinarySearchTree.Add(10);
-        stringBinarySearchTree.Add(20);
-        stringBinarySearchTree.Add(30);
-//        stringBinarySearchTree.Add(500);
-//        stringBinarySearchTree.Add(40);
-        stringBinarySearchTree.preOrder();
-        System.out.println("---------------------------\n" + "postOrder"); // it returns an array
-        System.out.println(stringBinarySearchTree.postOrder());
-        System.out.println("---------------------------\n" + "inOrder");
-        stringBinarySearchTree.inOrder();
+//        System.out.println(new App().getGreeting());
+//        BinarySearchTree<Integer> stringBinarySearchTree = new BinarySearchTree<>();
+//         stringBinarySearchTree.Add(10);
+//        stringBinarySearchTree.Add(20);
+//        stringBinarySearchTree.Add(30);
+////        stringBinarySearchTree.Add(500);
+////        stringBinarySearchTree.Add(40);
+//        stringBinarySearchTree.preOrder();
+//        System.out.println("---------------------------\n" + "postOrder"); // it returns an array
+//        System.out.println(stringBinarySearchTree.postOrder());
+//        System.out.println("---------------------------\n" + "inOrder");
+//        stringBinarySearchTree.inOrder();
+//
+//
+//        System.out.println(stringBinarySearchTree.Contains(40));
+//        System.out.println(stringBinarySearchTree.size);
+//        System.out.println(stringBinarySearchTree.breadthFirst());
 
-
-        System.out.println(stringBinarySearchTree.Contains(40));
-        System.out.println(stringBinarySearchTree.size);
-        System.out.println(stringBinarySearchTree.breadthFirst());
+        NArray_tree tree = new NArray_tree<>();
+        tree.setRoot(new N_arrayNode<Integer>(30));
+        tree.getRoot().getChildren().add(new N_arrayNode<Integer>(9));
+        tree.getRoot().getChildren().add(new N_arrayNode<Integer>(25));
+        tree.getRoot().getChildren().add(new N_arrayNode<Integer>(2));
+        N_arrayNode o= (N_arrayNode) tree.getRoot().children.get(0);
+        o.children.add(new N_arrayNode<Integer>(40));
+        tree.treeFizzBuzz(tree).printData();
     }
 
 
