@@ -1,6 +1,9 @@
 package Tree;
 
 import NodeTree.BTNode;
+import QueueDs.QueueDs;
+
+import java.util.EmptyStackException;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
     private boolean contain = false;
@@ -44,7 +47,6 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
     }
 
     private boolean ContainsHelper(T value, BTNode<T> BTNode) {
-
         if (value.compareTo(BTNode.getData()) == 0) {
             contain = true;
         } else if (value.compareTo((T) BTNode.getData()) > 0) {
@@ -57,5 +59,30 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
             }
         }
         return contain;
+    }
+
+    public int FindSumOFOddNumber(){
+        int sumOdd=0;
+        if (root==null) {
+            throw new EmptyStackException();
+        }
+        QueueDs<BTNode<Integer>> queue= new QueueDs<BTNode<Integer>>();
+        queue.enqueue(root);
+        BTNode<Integer> node ;
+        while (!queue.IsEmpty()){
+            node=queue.dequeue();
+
+            if (node.getLeft()!=null){
+                queue.enqueue(node.getLeft());
+            }
+            if (node.getRight()!=null){
+                queue.enqueue(node.getRight());
+            }
+            if (node.getData()%2!=0){
+                sumOdd+=node.getData();
+            }
+
+        }
+        return sumOdd;
     }
 }
