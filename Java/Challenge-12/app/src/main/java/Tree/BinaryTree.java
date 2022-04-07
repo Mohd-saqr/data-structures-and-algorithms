@@ -11,53 +11,60 @@ public class BinaryTree<T extends Comparable<T>> {
     BTNode<T> root;
     private List<T> arr = new ArrayList<>();
     private List<T> breadthFirst = new ArrayList<>();
+    String helper="";
 
 
     public BinaryTree() {
     }
 
-    public void preOrder() {
+    public String preOrder() {
+        helper="";
         BTNode<T> BTNode = this.root;
         if (BTNode == null) {
-            return;
+            return "";
         }
-        preOrderHelper(BTNode);
+       return preOrderHelper(BTNode);
 
     }
 
-    private void preOrderHelper(BTNode<T> BTNode) {
+    private String preOrderHelper(BTNode<T> BTNode) {
+
         if (BTNode == null) {
-            return;
+            return "";
         }
-        PrintNodeData(BTNode);
+        helper+= BTNode.getData() +" -> ";
+         PrintNodeData(BTNode);
         preOrderHelper(BTNode.getLeft());
         preOrderHelper(BTNode.getRight());
+        return helper;
     }
 
 
-    public void inOrder() {
+    public String inOrder() {
+        helper="";
         BTNode<T> BTNode = this.root;
         if (BTNode == null) {
-            return;
+            return "";
         }
-        inOrderHelper(BTNode);
+       return inOrderHelper(BTNode);
 
     }
 
-    private void inOrderHelper(BTNode<T> BTNode) {
+    private String inOrderHelper(BTNode<T> BTNode) {
         if (BTNode == null) {
-            return;
+            return "";
         }
 
         inOrderHelper(BTNode.getLeft());
+        helper+=BTNode.getData() +" -> ";
         PrintNodeData(BTNode);
         inOrderHelper(BTNode.getRight());
+        return helper;
     }
 
 
     public List<T> postOrder() {
-
-
+        helper="";
         BTNode<T> BTNode = this.root;
         if (BTNode == null) {
             return null;
@@ -74,6 +81,7 @@ public class BinaryTree<T extends Comparable<T>> {
         }
         postOrderHelper(BTNode.getLeft());
         postOrderHelper(BTNode.getRight());
+        helper+=BTNode.getData() +" -> ";
         arr.add(((T) BTNode.getData()));
         return arr;
     }
@@ -129,7 +137,10 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     private void PrintNodeData(BTNode<T> BTNode) {
+
+
         System.out.print(BTNode.getData() + " -> ");
+
     }
 
 
