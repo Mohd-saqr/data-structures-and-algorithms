@@ -110,4 +110,16 @@ class AppTest {
         o.children.add(new N_arrayNode<Integer>(40));
         assertEquals("FizzBuzz --> Fizz --> Buzz --> 2 --> Buzz --> ",tree.treeFizzBuzz(tree).printData());
     }
+    @Test
+    void testSumOddNum(){
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.Add(20);
+        tree.Add(9);
+        tree.Add(11);
+        tree.Add(14);
+        tree.Add(40);
+        tree.Add(3);
+        assertEquals(23,tree.FindSumOFOddNumber());
+
+    }
 }
