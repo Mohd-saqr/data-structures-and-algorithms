@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="51530afa-4a2e-43f1-b8d3-592f7c8a6cd9" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28Ih4vcKL9DaBCI38dzxIksFFMu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.AppTest.testInsertionSort4">
+    <configuration name="Challenge13" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Challenge.App" />
+      <module name="Challenge-13.app.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.appHasAGreeting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Challenge-13.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Challenge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Challenge" />
+      <option name="MAIN_CLASS_NAME" value="Challenge.AppTest" />
+      <option name="METHOD_NAME" value="appHasAGreeting" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testInsertionSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Challenge-13.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Challenge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Challenge" />
+      <option name="MAIN_CLASS_NAME" value="Challenge.AppTest" />
+      <option name="METHOD_NAME" value="testInsertionSort" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testInsertionSort2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Challenge-13.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Challenge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Challenge" />
+      <option name="MAIN_CLASS_NAME" value="Challenge.AppTest" />
+      <option name="METHOD_NAME" value="testInsertionSort2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testInsertionSort3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Challenge-13.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Challenge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Challenge" />
+      <option name="MAIN_CLASS_NAME" value="Challenge.AppTest" />
+      <option name="METHOD_NAME" value="testInsertionSort3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testInsertionSort4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Challenge-13.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Challenge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Challenge" />
+      <option name="MAIN_CLASS_NAME" value="Challenge.AppTest" />
+      <option name="METHOD_NAME" value="testInsertionSort4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Challenge13" />
+      <item itemvalue="JUnit.AppTest.appHasAGreeting" />
+      <item itemvalue="JUnit.AppTest.testInsertionSort" />
+      <item itemvalue="JUnit.AppTest.testInsertionSort2" />
+      <item itemvalue="JUnit.AppTest.testInsertionSort3" />
+      <item itemvalue="JUnit.AppTest.testInsertionSort4" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest.testInsertionSort4" />
+        <item itemvalue="JUnit.AppTest.testInsertionSort3" />
+        <item itemvalue="JUnit.AppTest.testInsertionSort2" />
+        <item itemvalue="JUnit.AppTest.testInsertionSort" />
+        <item itemvalue="JUnit.AppTest.appHasAGreeting" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51530afa-4a2e-43f1-b8d3-592f7c8a6cd9" name="Changes" comment="" />
+      <created>1650909822665</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650909822665</updated>
+      <workItem from="1650909824529" duration="4549000" />
+      <workItem from="1650922225807" duration="1428000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
