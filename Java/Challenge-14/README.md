@@ -9,7 +9,7 @@ merge sort is the method to sort an array in best time complexity
 ![](./screenshot/Whiteboard.png)
 
 ## Approach & Efficiency
-TIME = LOG(N) AND SPACE O(N)
+TIME = O(nLogn) AND SPACE O(N)
 ## Solution
 
 ````
