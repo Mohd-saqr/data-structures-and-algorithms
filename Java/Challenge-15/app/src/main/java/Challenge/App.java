@@ -13,12 +13,12 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-//        Arrays.stream(QuickSort(new int[]{8, 4, 23, 42, 16, 15}, 0, 5)).forEach(System.out::println);
+        Arrays.stream(QuickSort(new int[]{-1, 5, 23, 42, 0, -2}, 0, 5)).forEach(System.out::println);
 
     }
 
 
-    public  int[] QuickSort(int[] arr, int left, int right) {
+    public static int[] QuickSort(int[] arr, int left, int right) {
         if (left < right) {
             int position = Partition(arr, left, right);
             QuickSort(arr, left, position - 1);
@@ -27,7 +27,7 @@ public class App {
         return arr;
     }
 
-    private  int Partition(int[] arr, int left, int right) {
+    private static int Partition(int[] arr, int left, int right) {
         int pivot = arr[right];
         int low = left - 1;
         for (int i = left; i < right; i++) {
@@ -41,9 +41,15 @@ public class App {
 
     }
 
-    private  void Swap(int[] arr, int i, int low) {
+    private static void Swap(int[] arr, int i, int low) {
         int temp = arr[i];
         arr[i] = arr[low];
         arr[low] = temp;
     }
+
+
+
+
+
+
 }

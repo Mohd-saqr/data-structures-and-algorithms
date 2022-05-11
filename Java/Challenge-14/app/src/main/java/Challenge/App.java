@@ -14,13 +14,13 @@ public class App {
         System.out.println(new App().getGreeting());
 
 
-//        MergeSort(new int[]{8,4,23,42,16,15});
-//        Arrays.stream(MergeSort(new int[]{8,4,23,42,16,15})).forEach(value -> {
-//            System.out.print(value + " --> ");
-//        });
+        MergeSort(new int[]{8,4,23,42,16,15});
+        Arrays.stream(MergeSort(new int[]{8,4,23,42,16,15})).forEach(value -> {
+            System.out.print(value + " --> ");
+        });
     }
 
-    public  int[] MergeSort(int[] arr) {
+    public static int[]  MergeSort(int[] arr) {
         int n = arr.length;
         if (n > 1) {
             int mid = n / 2;
@@ -36,7 +36,7 @@ public class App {
 
     }
 
-    private  int[] MergeSort(int[] left, int[] right, int[] arr) {
+    private static int[] MergeSort(int[] left, int[] right, int[] arr) {
         int i = 0;
         int j = 0;
         int k = 0;
@@ -63,5 +63,11 @@ public class App {
         }
         return arr;
     }
+
+
+
+
+
+
 
 }
