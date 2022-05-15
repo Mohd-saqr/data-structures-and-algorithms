@@ -64,7 +64,7 @@ public class HashTable<K, V> {
         LinkedList<Entry<K, V>> bucket = entries[index];
         if (bucket == null) return false;
         for (Entry<K, V> entry : bucket) {
-            if (entry.getKay() == kay) return true;
+            if (Objects.equals(entry.getKay(),kay) ) return true;
         }
         return false;
     }
@@ -106,7 +106,8 @@ public class HashTable<K, V> {
 
 
     private int hashedCode(K key) {
-        return Math.abs(key.hashCode() % bound);
+
+        return(Objects.hashCode(key)<0)?Objects.hashCode(key)*-1%(bound):Objects.hashCode(key)%(bound);
     }
 
     public int getSize() {

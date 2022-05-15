@@ -38,3 +38,27 @@ hash.get(key)
 hash.keys()
 
 ```
+
+
+# Challenge 31
+
+# Challenge Summary
+we want to create a function that finds the first word to occur more than once in a string
+
+
+## Whiteboard Process
+![](./SecreenShot/Whiteboard.png)
+## Approach & Efficiency
+Time : O(N) because we split the string, and we're looping inside the split array then it's depend on the 
+String length then it took O(N)
+SPACE : we declare another array it depeng on the length or string so the space
+O(N)
+## Solution
+
+```
+i created class it has the method it's usined hash table so just call 
+the method becouse it static
+HashTableMethod.repeatedWord("a aaa adsdsa aaa ")
+
+you can look at the example in the app class
+```
