@@ -21,9 +21,9 @@ d - double hash : `in this way we are hashing two times : `
 we want to implement hash table and add method (put , get , contain, hash)
 
 ## Approach & Efficiency
-the hash table operate in time complexity o(1) and space o(n)
+the hash table operate in time complexity o(1) and space o(1)
 but not all method we have some method with time complexity o(n)
-such as get(Value) search if the hash table has the value
+such as get(Value) and `keys`
 
 ## API
 ```

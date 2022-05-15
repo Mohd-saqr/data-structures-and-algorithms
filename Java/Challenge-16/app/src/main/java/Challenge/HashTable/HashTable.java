@@ -24,11 +24,10 @@ public class HashTable<K, V> {
         /*
         if the buckets in this index is null
         */
-        LinkedList<Entry<K,V>> entries1=entries[index];
-        if (entries1 == null) {
+        LinkedList<Entry<K, V>> bucket = entries[index];
+        if (bucket == null) {
             entries[index] = new LinkedList<>();
         }
-        LinkedList<Entry<K, V>> bucket = entries[index];
         for (Entry<K, V> entry : bucket) {
             if (entry.getKay() == kay) {
                 entry.setValue(value);
@@ -64,7 +63,7 @@ public class HashTable<K, V> {
         LinkedList<Entry<K, V>> bucket = entries[index];
         if (bucket == null) return false;
         for (Entry<K, V> entry : bucket) {
-            if (Objects.equals(entry.getKay(),kay) ) return true;
+            if (Objects.equals(entry.getKay(), kay)) return true;
         }
         return false;
     }
@@ -77,17 +76,16 @@ public class HashTable<K, V> {
             if (entry.getKay() == kay) {
                 bucket.remove(entry);
                 size--;
-            }
-            else throw new IllegalArgumentException("Key Not Found");
+            } else throw new IllegalArgumentException("Key Not Found");
         }
 
     }
 
 
-    public Collection<K> keys(){
-        Collection<K>keys=new ArrayList<>();
-        Arrays.stream(entries).forEach(LL->{
-            if (LL!=null) {
+    public Collection<K> keys() {
+        Collection<K> keys = new ArrayList<>();
+        Arrays.stream(entries).forEach(LL -> {
+            if (LL != null) {
                 LL.stream().forEach(entry -> {
                     keys.add(entry.getKay());
                 });
@@ -96,18 +94,15 @@ public class HashTable<K, V> {
         return keys;
     }
 
-    public int hash(K key){
+    public int hash(K key) {
         /// if the key in found return the index of collection for that key if not return 0
-        return (contains(key))?Math.abs(key.hashCode() % bound):0;
+        return (contains(key)) ? Math.abs(key.hashCode() % bound) : 0;
     }
-
-
-
 
 
     private int hashedCode(K key) {
 
-        return(Objects.hashCode(key)<0)?Objects.hashCode(key)*-1%(bound):Objects.hashCode(key)%(bound);
+        return (Objects.hashCode(key) < 0) ? Objects.hashCode(key) * -1 % (bound) : Objects.hashCode(key) % (bound);
     }
 
     public int getSize() {
