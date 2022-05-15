@@ -96,7 +96,7 @@ class AppTest {
 
 
     /*
-    this test for Challenge 31  
+    this test for Challenge 31
      */
     @Test
     void testRepeatedWordHappyPath(){

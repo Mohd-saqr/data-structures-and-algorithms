@@ -19,5 +19,6 @@
 |  Challenge-14        	   |           Insertion Sort           |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-13)        |
 |  Challenge-15        	   |             Merge Sort             |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-14)        |
 |  Challenge-15        	   |             Quick Sort             |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-15)        |
-|  Challenge-15        	   |             hashtable              |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-16)        |
+|  Challenge-16        	   |             hashtable              |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-16)        |
+|  Challenge-17        	   |             Find the first repeated word in a book.   |        [ link](https://github.com/Mohd-saqr/data-structures-and-algorithms/tree/main/Java/Challenge-16)        |
 
