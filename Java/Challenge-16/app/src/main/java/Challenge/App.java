@@ -13,15 +13,31 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-        HashTable<Integer,String> test= new HashTable<>(5);
-        test.put(3,"mohammed");
-        test.put(1,"nidal");
-        test.put(1,"jj");
-        test.put(11,"oo");
+        HashTable<String,String> test= new HashTable<>(5);
+        test.put("Once","mohammed");
+        test.put("upon","nidal");
+        test.put("time","jj");
+        test.put("was","oo");
+        test.put("a","a");
+        test.put("a","oo");
+        test.put("there","oo");
+        test.put("there","oo");
+        test.put("there","oo");
 
 
 
 
-        System.out.println(test.hash(3));
+
+
+
+
+
+
+
+       /*
+       challenge 31
+        */
+        System.out.println(HashTableMethod.repeatedWord("a"));
+
     }
 }
