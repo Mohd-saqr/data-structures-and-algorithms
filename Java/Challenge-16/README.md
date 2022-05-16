@@ -21,43 +21,6 @@ d - double hash : `in this way we are hashing two times : `
 we want to implement hash table and add method (put , get , contain, hash)
 
 ## Approach & Efficiency
-the hash table operate in time complexity o(1) and space o(1)
-but not all method we have some method with time complexity o(n)
-such as get(Value) and `keys`
-
-## API
-```
-initilise hashtable and add bound
-HashTable<Integer,String> hash= new HashTable<>(5);
-put method
-hash.put(key,value) 
-remove method
-hash.remove(key)
-hash.contain(key)
-hash.get(key)
-hash.keys()
-
-```
-
-
-# Challenge 31
-
-# Challenge Summary
-we want to create a function that finds the first word to occur more than once in a string
-
-
-## Whiteboard Process
-![](./SecreenShot/Whiteboard.png)
-## Approach & Efficiency
-
-[//]: # (Time : O&#40;N&#41; because we split the string, and we're looping inside the split array then it's depend on the )
-
-[//]: # (String length then it took O&#40;N&#41;)
-
-[//]: # (SPACE : we declare another array it depeng on the length or string so the space)
-
-[//]: # (O&#40;N&#41;)
-
 Time complexity and space complexity:
 ```
 put method {
@@ -100,6 +63,43 @@ worst case : o(n)
 Space :
  o(n)
 }
+
+
+
+
+```
+
+## API
+initialise hashtable and add bound
+HashTable<Integer,String> hash= new HashTable<>(5);
+put method
+hash.put(key,value) 
+remove method
+hash.remove(key)
+hash.contain(key)
+hash.get(key)
+hash.keys()
+
+```
+
+
+# Challenge 31
+
+# Challenge Summary
+we want to create a function that finds the first word to occur more than once in a string
+
+
+## Whiteboard Process
+![](./SecreenShot/Whiteboard.png)
+## Approach & Efficiency
+
+Time : O(N) because we split the string, and we're looping inside the split array then it's depend on the 
+
+String length then it took O(N)
+
+SPACE : we declare another array it depends on the length or string so the space
+
+O(N)
 
 ```
 
