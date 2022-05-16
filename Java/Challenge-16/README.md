@@ -80,7 +80,7 @@ hash.contain(key)
 hash.get(key)
 hash.keys()
 
-```
+
 
 
 # Challenge 31
@@ -90,18 +90,17 @@ we want to create a function that finds the first word to occur more than once i
 
 
 ## Whiteboard Process
-![](./SecreenShot/Whiteboard.png)
+![](./SecreenShot/Whiteboard%20(3).png)
 ## Approach & Efficiency
 
-Time : O(N) because we split the string, and we're looping inside the split array then it's depend on the 
+Time : O(N)  on average case  because we split the string, and we're looping inside the split array then it's depend on the 
 
-String length then it took O(N)
+String length then it took O(N) but on worst case it o(n^2)
 
-SPACE : we declare another array it depends on the length or string so the space
+SPACE : we declare another array it depends on the length or string so the space O(N)
 
-O(N)
 
-```
+
 
 ## Solution
 
