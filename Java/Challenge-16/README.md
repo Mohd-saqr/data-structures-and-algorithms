@@ -49,10 +49,60 @@ we want to create a function that finds the first word to occur more than once i
 ## Whiteboard Process
 ![](./SecreenShot/Whiteboard.png)
 ## Approach & Efficiency
-Time : O(N) because we split the string, and we're looping inside the split array then it's depend on the 
-String length then it took O(N)
-SPACE : we declare another array it depeng on the length or string so the space
-O(N)
+
+[//]: # (Time : O&#40;N&#41; because we split the string, and we're looping inside the split array then it's depend on the )
+
+[//]: # (String length then it took O&#40;N&#41;)
+
+[//]: # (SPACE : we declare another array it depeng on the length or string so the space)
+
+[//]: # (O&#40;N&#41;)
+
+Time complexity and space complexity:
+```
+put method {
+Time :
+avarege case : o(1) 
+worst case : o(n)
+Space :
+o(n)
+}
+
+keys method {
+Time :
+ o(n*n) =n(n^2)
+Space :
+o(n)
+}
+
+remove method {
+Time :
+avarege case : o(1) 
+worst case : o(n)
+Space :
+o(n)
+}
+
+contains method : {
+Time :
+avarege case : o(1) 
+worst case : o(n)
+Space :
+best case : o(1) 
+avarage case : o(n)
+
+}
+
+get method {
+Time :
+avarege case : o(1) 
+worst case : o(n)
+Space :
+ o(n)
+}
+
+```
+
 ## Solution
 
 ```

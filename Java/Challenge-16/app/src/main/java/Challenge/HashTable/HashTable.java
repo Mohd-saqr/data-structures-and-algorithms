@@ -24,11 +24,12 @@ public class HashTable<K, V> {
         /*
         if the buckets in this index is null
         */
-        LinkedList<Entry<K, V>> bucket = entries[index];
-        if (bucket == null) {
+//        LinkedList<Entry<K, V>> bucket1 = ;
+        if (entries[index] == null) {
             entries[index] = new LinkedList<>();
         }
-        for (Entry<K, V> entry : bucket) {
+//        LinkedList<Entry<K, V>> bucket = ;
+        for (Entry<K, V> entry : entries[index]) {
             if (entry.getKay() == kay) {
                 entry.setValue(value);
                 return;
