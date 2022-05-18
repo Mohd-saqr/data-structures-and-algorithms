@@ -111,3 +111,35 @@ HashTableMethod.repeatedWord("a aaa adsdsa aaa ")
 
 you can look at the example in the app class
 ```
+
+
+
+# Challenge 32
+
+# Challenge Summary
+we want to create a method it returns all match value in tow binary trees
+
+
+## Whiteboard Process
+![](./SecreenShot/Whiteboardlab-32.png)
+## Approach & Efficiency
+
+Time : O(N)
+Space complexity at average case = O(Log(n))
+Space complexity at worst case  = O(n)
+
+
+
+
+## Solution
+
+```
+create CommonDataTrees class
+and call the method .
+ CommonDataOnTrees<String> t = new CommonDataOnTrees<>();
+ t.findMatcher(b1,b2)
+you can create a binary tree by create instance from
+
+ BinaryTree<String> b1 = new BinaryTree<>();
+you can look at the example in the app class
+```

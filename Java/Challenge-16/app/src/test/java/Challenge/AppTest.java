@@ -3,12 +3,17 @@
  */
 package Challenge;
 
+import Challenge.Challenege.CommonDataOnTrees;
+import Challenge.Challenege.HashTableMethod;
 import Challenge.HashTable.HashTable;
+import binaryTree.BinaryTree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -132,6 +137,97 @@ class AppTest {
     void testRepeatedWordEdgeCases3(){
 
         assertEquals("No repeated Word",HashTableMethod.repeatedWord("aa a"));
+    }
+
+
+    /**
+     * this test for lab 32
+     */
+    @Test
+    void testCommonDataBinaryTree(){
+        CommonDataOnTrees<Integer> t = new CommonDataOnTrees<>();
+        BinaryTree<Integer> b1 = new BinaryTree<>();
+
+        b1.Add(1);
+        b1.Add(2);
+        b1.Add(3);
+        b1.Add(4);
+        b1.Add(5);
+        b1.Add(6);
+        b1.Add(7);
+
+
+
+        BinaryTree<Integer> b2 = new BinaryTree<>();
+        b2.Add(1);
+        b2.Add(7);
+        b2.Add(6);
+        b2.Add(2);
+        b2.Add(200);
+        b2.Add(160);
+        b2.Add(15);
+        b2.Add(500);
+        List<Integer> expected = Arrays.asList(1,7,6,2);
+    assertEquals(expected,t.findMatcher(b1,b2));
+
+    }
+
+    @Test
+    void testCommonDataBinaryTree2(){
+        CommonDataOnTrees<String> t = new CommonDataOnTrees<>();
+        BinaryTree<String> b1 = new BinaryTree<>();
+
+        b1.Add("1");
+        b1.Add("2");
+        b1.Add("3");
+        b1.Add("4");
+        b1.Add("5");
+        b1.Add("6");
+        b1.Add("7");
+
+
+
+        BinaryTree<String> b2 = new BinaryTree<>();
+        b2.Add("1");
+        b2.Add("7");
+        b2.Add("6");
+        b2.Add("2");
+        b2.Add("200");
+        b2.Add("160");
+        b2.Add("15");
+        b2.Add("500");
+        List<String> expected = Arrays.asList("1","7","6","2");
+        assertEquals(expected,t.findMatcher(b1,b2));
+
+    }
+
+    @Test
+    void testCommonDataBinaryTreeEdgeCases(){
+        CommonDataOnTrees<String> t = new CommonDataOnTrees<>();
+        BinaryTree<String> b1 = new BinaryTree<>();
+        BinaryTree<String> b2 = new BinaryTree<>();
+        List<String> expected = Arrays.asList();
+        assertEquals(expected,t.findMatcher(b1,b2));
+
+    }
+
+    @Test
+    void testCommonDataBinaryTreeEdgeCases2(){
+        CommonDataOnTrees<String> t = new CommonDataOnTrees<>();
+        BinaryTree<String> b1 = new BinaryTree<>();
+
+        b1.Add("1");
+        b1.Add("2");
+        b1.Add("3");
+        b1.Add("4");
+        b1.Add("5");
+        b1.Add("6");
+        b1.Add("7");
+
+        BinaryTree<String> b2 = new BinaryTree<>();
+        List<String> expected = Arrays.asList();
+        assertEquals(expected,t.findMatcher(b1,b2));
+
     }
 
 }
