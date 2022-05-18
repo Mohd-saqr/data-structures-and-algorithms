@@ -3,7 +3,10 @@
  */
 package Challenge;
 
+import Challenge.Challenege.CommonDataOnTrees;
+import Challenge.Challenege.HashTableMethod;
 import Challenge.HashTable.HashTable;
+import binaryTree.BinaryTree;
 
 public class App {
     public String getGreeting() {
@@ -13,16 +16,17 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-        HashTable<String,String> test= new HashTable<>(5);
-        test.put("Once","mohammed");
-        test.put("upon","nidal");
-        test.put("time","jj");
-        test.put("was","oo");
-        test.put("a","a");
-        test.put("a","oo");
-        test.put("there","oo");
-        test.put("there","oo");
-        test.put("there","oo");
+//        HashTable<String,String> test= new HashTable<>(5);
+//        test.put("Once","mohammed");
+//        test.put("upon","nidal");
+//        test.put("time","jj");
+//        test.put("was","oo");
+//        test.put("a","a");
+//        test.put("a","oo");
+//        test.put("there","oo");
+//        test.put("there","oo");
+//        test.put("there","oo");
+
 
 
 
@@ -37,7 +41,45 @@ public class App {
        /*
        challenge 31
         */
-        System.out.println(HashTableMethod.repeatedWord("a"));
+//        System.out.println(HashTableMethod.repeatedWord("a"));
+
+        // challenge 32
+        BinaryTree<Integer> b1 = new BinaryTree<>();
+
+        b1.Add(150);
+        b1.Add(100);
+        b1.Add(250);
+        b1.Add(350);
+        b1.Add(200);
+        b1.Add(100);
+        b1.Add(75);
+        b1.Add(125);
+        b1.Add(175);
+        b1.Add(350);
+        b1.Add(300);
+        b1.Add(500);
+
+
+        BinaryTree<Integer> b2 = new BinaryTree<>();
+        b2.Add(42);
+        b2.Add(100);
+        b2.Add(600);
+        b2.Add(350);
+        b2.Add(200);
+        b2.Add(160);
+        b2.Add(15);
+        b2.Add(500);
+        b2.Add(4);
+        b2.Add(125);
+        b2.Add(175);
+
+
+
+
+        CommonDataOnTrees<Integer> commonDataOnTrees= new CommonDataOnTrees<>();
+
+
+        System.out.println(commonDataOnTrees.findMatcher(b1,b2));
 
     }
 }

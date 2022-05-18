@@ -1,4 +1,4 @@
-package Challenge;
+package Challenge.Challenege;
 
 import Challenge.HashTable.HashTable;
 public class HashTableMethod {
@@ -14,4 +14,7 @@ public class HashTableMethod {
         return "No repeated Word"; //if the string is empty or hase on word;
 
     }
+
+
+
 }
