@@ -5,9 +5,12 @@ the hashmap join use in database method to join to table such as relationship .
 we want to create  join table function to join to hashMap
 
 ## Approach & Efficiency
-Time complexity = O(N+M)
-Space complexity =O(Log(n))
+Big(O)
+Time complexity average -case= O(N+M)
+Time complexity worst-case= O(N^2)
+Space complexity =O(N)
+
 
 
 ## Solution
-![](./assets/Whiteboard%20(1).png)
+![](./assets/Whiteboard.png)
