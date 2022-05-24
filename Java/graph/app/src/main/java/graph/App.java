@@ -4,11 +4,20 @@
 package graph;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+     Graph<String> stringGraph = new Graph<>();
+     Node<String> node = new Node<>("A");
+        Node<String> node2 = new Node<>("B");
+        Node<String> node3 = new Node<>("C");
+         stringGraph.addNode("A");
+        stringGraph.addNode("B");
+        stringGraph.addNode("C");
+        stringGraph.addEdge(node,node2);
+        stringGraph.addEdge(node,node3,5);
+//        System.out.println(stringGraph.getNeighbors(node));
+        System.out.println(stringGraph.isConnected(node2,node3));
+
     }
 }

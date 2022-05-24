@@ -3,12 +3,12 @@ package graph;
 public class Edges <V>{
   private   Node<V> from;
     private Node<V> to;
-    private  int white;
+    private  int weight;
 
     public Edges(Node<V> from, Node<V> to, int white) {
         this.from = from;
         this.to = to;
-        this.white = white;
+        this.weight = white;
     }
 
     public Node<V> getFrom() {
@@ -27,11 +27,16 @@ public class Edges <V>{
         this.to = to;
     }
 
-    public int getWhite() {
-        return white;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setWhite(int white) {
-        this.white = white;
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return from.getValue() +"  connected to " + to.getValue() + " weight: "+weight;
     }
 }
