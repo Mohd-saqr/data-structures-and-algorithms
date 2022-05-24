@@ -3,12 +3,99 @@
  */
 package graph;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+
+    Graph<String> stringGraph;
+    Graph<Integer> integerGraph;
+
+    @BeforeEach
+    void createGraph() {
+        stringGraph = new Graph<>();
+        integerGraph = new Graph<>();
     }
+
+    @Test
+    void assertAddNode(){
+        stringGraph.addNode("Mohammed");
+        assertTrue(stringGraph.isContainValue("Mohammed"));
+        // to make sure is isContainValue is work
+        assertFalse(stringGraph.isContainValue("Mohammed22"));
+    }
+
+    @Test
+    void assertAddNode2(){
+        integerGraph.addNode(20);
+        assertTrue(integerGraph.isContainValue(20));
+        // to make sure is isContainValue is work
+        assertFalse(integerGraph.isContainValue(30));
+    }
+
+    @Test
+    void assertAddEdges(){
+        Node<Integer> node1 = new Node<>(10);
+        Node<Integer> node2 = new Node<>(20);
+        Node<Integer> node3 = new Node<>(30);
+
+        integerGraph.addNode(node1.getValue());
+        integerGraph.addNode(node2.getValue());
+        integerGraph.addNode(node3.getValue());
+        integerGraph.addEdge(node1,node2);
+        assertTrue(integerGraph.isConnected(node1,node2));
+        // to make sure is isContainValue is work
+        assertFalse(integerGraph.isConnected(node1,node3));
+    }
+
+    @Test
+    void assertAllNodes(){
+        Node<Integer> node1 = new Node<>(10);
+        Node<Integer> node2 = new Node<>(20);
+        Node<Integer> node3 = new Node<>(30);
+        integerGraph.addNode(node1.getValue());
+        integerGraph.addNode(node2.getValue());
+        integerGraph.addNode(node3.getValue());
+        integerGraph.addEdge(node1,node2);
+        integerGraph.addEdge(node1,node3);
+        //// Neighbors are returned with the weight between nodes included
+        String excepted ="[10  connected to 20 weight: 0, 10  connected to 30 weight: 0]";
+        assertEquals(excepted,integerGraph.getNeighbors(node1).toString());
+
+    }
+
+    @Test
+    void assertAllNeighbors (){
+        Node<Integer> node1 = new Node<>(10);
+        Node<Integer> node2 = new Node<>(20);
+        Node<Integer> node3 = new Node<>(30);
+        integerGraph.addNode(node1.getValue());
+        integerGraph.addNode(node2.getValue());
+        integerGraph.addNode(node3.getValue());
+        assertNotEquals(0,integerGraph.getNodes().size());
+
+    }
+
+    @Test
+    void  size(){
+        Node<Integer> node1 = new Node<>(10);
+        Node<Integer> node2 = new Node<>(20);
+        Node<Integer> node3 = new Node<>(30);
+        integerGraph.addNode(node1.getValue());
+        integerGraph.addNode(node2.getValue());
+        integerGraph.addNode(node3.getValue());
+        assertEquals(3,integerGraph.size());
+
+    }
+    /// A graph with only one node and edge can be properly returned
+    @Test
+    void testOnNode(){
+        Node<Integer> node1 = new Node<>(10);
+        integerGraph.addNode(node1.getValue());
+        String excepted ="Graph{size=1, nodes={10=10 edges -> []}}";
+        assertEquals(excepted,integerGraph.toString());
+    }
+
+
 }

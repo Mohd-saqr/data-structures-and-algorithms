@@ -2,10 +2,16 @@ package graph;
 
 import java.util.HashSet;
 
-public class Node <V>{
-    private  V value ;
+public class Node <V> {
+    private V value;
+
+    /**
+     * i use the hash set to handel edges or Neighbors  because
+     * and i use hashe set beouse we dont have deplicate edges such as
+     * a - b and  a - b
+      */
+
     private HashSet<Edges<V>> edges = new HashSet<>();
-    private  int weight;
 
 
     public Node(V value) {
@@ -20,17 +26,20 @@ public class Node <V>{
         this.value = value;
     }
 
-    public void addEdges(Node<V> to ,int white){
-        edges.add(new Edges<>(this,to,white));
-    }
+    // i create this method to add edges with weight
 
-    public void addEdges(Node<V> to ){
-        edges.add(new Edges<>(this,to, 0));
+    public void addEdges(Node<V> to, int weight ) {
+        edges.add(new Edges<>(this, to, weight ));
+    }
+    // i create this method to add edges without weight
+    public void addEdges(Node<V> to) {
+        edges.add(new Edges<>(this, to, 0));
     }
 
     @Override
     public String toString() {
-        return value.toString() + " -> " + edges;
+
+        return  this.value+" edges -> " + edges;
     }
 
     public HashSet<Edges<V>> getEdges() {
@@ -40,12 +49,6 @@ public class Node <V>{
     public void setEdges(HashSet<Edges<V>> edges) {
         this.edges = edges;
     }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
 }
+
+
