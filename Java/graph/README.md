@@ -2,7 +2,7 @@
  the graph is non leaner datastructures to use solve a lot of problem
 the graph is use i real word in GPS and social media 
 
-## Challenge
+## Challenge 35
 we want to implement the graph from scratch
 
 ## Approach & Efficiency
@@ -53,6 +53,7 @@ Time = O(n^2)
 Space = O(n)
 
 ## Solution
+
 ````
 just create i grap class and call all method suvh as :
 
@@ -63,4 +64,31 @@ then call the method breadthFirst
 
 stringGraph.breadthFirst(node).
 
+````
+
+
+# code Challenge 37 
+# Challenge Summary
+
+we want to create business trip to Determine whether the trip is possible with direct flights, and how much it would cost.
+
+## Whiteboard Process
+![](./secreenshot/business%20trip.png)
+
+## Approach & Efficiency
+Time = O(n^2)
+
+Space = O(n)
+
+## Solution
+
 ```
+call the method in class 
+the method is static so you can call it Without create instance 
+from BusinessTrip class .
+BusinessTrip.businessTrip(graph,array)
+
+
+```
+
+

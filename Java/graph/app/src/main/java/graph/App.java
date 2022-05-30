@@ -22,8 +22,8 @@ public class App {
         stringGraph.addNode("Naboo");
 
 
-        stringGraph.addEdge(node, node2);
-        stringGraph.addEdge(node2, node3);
+        stringGraph.addEdge(node, node2,50);
+        stringGraph.addEdge(node2, node3,20);
         stringGraph.addEdge(node4, node3);
         stringGraph.addEdge(node4, node6);
         stringGraph.addEdge(node3, node6);
@@ -34,6 +34,10 @@ public class App {
 //        System.out.println(stringGraph.isConnected(node2,node3));
         System.out.println(stringGraph.breadthFirst(node));
 ////
+
+
+
+        System.out.println(BusinessTrip.businessTrip(stringGraph,new String[]{"Pandora","Naboo"}));
 
     }
 }
