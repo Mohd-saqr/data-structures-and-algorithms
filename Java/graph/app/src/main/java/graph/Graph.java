@@ -108,6 +108,17 @@ public class Graph<V> {
         return out;
     }
 
+
+    /**
+     *
+     * @this method create for BusinessTrip
+     */
+
+    public Node<V> getNode(String value){
+        return nodes.get(value);
+    }
+
+
     @Override
     public String toString() {
         return "Graph{" +
