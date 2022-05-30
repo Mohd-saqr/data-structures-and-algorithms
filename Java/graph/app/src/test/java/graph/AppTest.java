@@ -5,6 +5,10 @@ package graph;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -19,7 +23,7 @@ class AppTest {
     }
 
     @Test
-    void assertAddNode(){
+    void assertAddNode() {
         stringGraph.addNode("Mohammed");
         assertTrue(stringGraph.isContainValue("Mohammed"));
         // to make sure is isContainValue is work
@@ -27,7 +31,7 @@ class AppTest {
     }
 
     @Test
-    void assertAddNode2(){
+    void assertAddNode2() {
         integerGraph.addNode(20);
         assertTrue(integerGraph.isContainValue(20));
         // to make sure is isContainValue is work
@@ -35,7 +39,7 @@ class AppTest {
     }
 
     @Test
-    void assertAddEdges(){
+    void assertAddEdges() {
         Node<Integer> node1 = new Node<>(10);
         Node<Integer> node2 = new Node<>(20);
         Node<Integer> node3 = new Node<>(30);
@@ -43,58 +47,154 @@ class AppTest {
         integerGraph.addNode(node1.getValue());
         integerGraph.addNode(node2.getValue());
         integerGraph.addNode(node3.getValue());
-        integerGraph.addEdge(node1,node2);
-        assertTrue(integerGraph.isConnected(node1,node2));
+        integerGraph.addEdge(node1, node2);
+        assertTrue(integerGraph.isConnected(node1, node2));
         // to make sure is isContainValue is work
-        assertFalse(integerGraph.isConnected(node1,node3));
+        assertFalse(integerGraph.isConnected(node1, node3));
     }
 
     @Test
-    void assertAllNodes(){
+    void assertAllNodes() {
         Node<Integer> node1 = new Node<>(10);
         Node<Integer> node2 = new Node<>(20);
         Node<Integer> node3 = new Node<>(30);
         integerGraph.addNode(node1.getValue());
         integerGraph.addNode(node2.getValue());
         integerGraph.addNode(node3.getValue());
-        integerGraph.addEdge(node1,node2);
-        integerGraph.addEdge(node1,node3);
+        integerGraph.addEdge(node1, node2);
+        integerGraph.addEdge(node1, node3);
         //// Neighbors are returned with the weight between nodes included
-        String excepted ="[10  connected to 20 weight: 0, 10  connected to 30 weight: 0]";
-        assertEquals(excepted,integerGraph.getNeighbors(node1).toString());
+        String excepted = "[10  connected to 20 weight: 0, 10  connected to 30 weight: 0]";
+        assertEquals(excepted, integerGraph.getNeighbors(node1).toString());
 
     }
 
     @Test
-    void assertAllNeighbors (){
+    void assertAllNeighbors() {
         Node<Integer> node1 = new Node<>(10);
         Node<Integer> node2 = new Node<>(20);
         Node<Integer> node3 = new Node<>(30);
         integerGraph.addNode(node1.getValue());
         integerGraph.addNode(node2.getValue());
         integerGraph.addNode(node3.getValue());
-        assertNotEquals(0,integerGraph.getNodes().size());
+        assertNotEquals(0, integerGraph.getNodes().size());
 
     }
 
     @Test
-    void  size(){
+    void size() {
         Node<Integer> node1 = new Node<>(10);
         Node<Integer> node2 = new Node<>(20);
         Node<Integer> node3 = new Node<>(30);
         integerGraph.addNode(node1.getValue());
         integerGraph.addNode(node2.getValue());
         integerGraph.addNode(node3.getValue());
-        assertEquals(3,integerGraph.size());
+        assertEquals(3, integerGraph.size());
 
     }
+
     /// A graph with only one node and edge can be properly returned
     @Test
-    void testOnNode(){
+    void testOnNode() {
         Node<Integer> node1 = new Node<>(10);
         integerGraph.addNode(node1.getValue());
-        String excepted ="Graph{size=1, nodes={10=10 edges -> []}}";
-        assertEquals(excepted,integerGraph.toString());
+        String excepted = "Graph{size=1, nodes={10=10 edges -> []}}";
+        assertEquals(excepted, integerGraph.toString());
+    }
+
+
+    /**
+     * this test for lab 36
+     */
+
+    @Test
+    void testHappyPath() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create node
+        Node<String> node = new Node<>("Pandora");
+        Node<String> node2 = new Node<>("Arendelle");
+        Node<String> node3 = new Node<>("Metroville");
+        Node<String> node4 = new Node<>("Monstroplolis");
+        Node<String> node5 = new Node<>("Narnia");
+        Node<String> node6 = new Node<>("Naboo");
+        // add nodes
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Arendelle");
+        stringGraph.addNode("Metroville");
+        stringGraph.addNode("Monstroplolis");
+        stringGraph.addNode("Narnia");
+        stringGraph.addNode("Naboo");
+
+        // add edges
+        stringGraph.addEdge(node, node2);
+        stringGraph.addEdge(node2, node3);
+        stringGraph.addEdge(node4, node3);
+        stringGraph.addEdge(node4, node6);
+        stringGraph.addEdge(node3, node6);
+        stringGraph.addEdge(node3, node5);
+
+        List<String> expected = Arrays.asList("Pandora", "Arendelle", "Metroville", "Naboo", "Narnia", "Monstroplolis");
+        assertEquals(expected, stringGraph.breadthFirst(node));
+    }
+
+
+    @Test
+    void testEdgeCase() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create node
+        Node<String> node = new Node<>("Pandora");
+        Node<String> node2 = new Node<>("Arendelle");
+        Node<String> node3 = new Node<>("Metroville");
+        Node<String> node4 = new Node<>("Monstroplolis");
+        Node<String> node5 = new Node<>("Narnia");
+        Node<String> node6 = new Node<>("Naboo");
+        // add nodes
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Arendelle");
+        stringGraph.addNode("Metroville");
+        stringGraph.addNode("Monstroplolis");
+        stringGraph.addNode("Narnia");
+        stringGraph.addNode("Naboo");
+
+        // No edges
+
+
+        List<String> expected = Arrays.asList("Pandora");
+        assertEquals(expected, stringGraph.breadthFirst(node));
+    }
+
+    @Test
+    void testExpectedFailure() {
+
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create node
+        Node<String> node = new Node<>("Pandora");
+        Node<String> node2 = new Node<>("Pandora");
+        Node<String> node3 = new Node<>("Pandora");
+        Node<String> node4 = new Node<>("Pandora");
+        Node<String> node5 = new Node<>("Pandora");
+        Node<String> node6 = new Node<>("Pandora");
+        // add nodes
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Pandora");
+
+        // No edges
+        stringGraph.addEdge(node, node2);
+        stringGraph.addEdge(node2, node3);
+        stringGraph.addEdge(node4, node3);
+        stringGraph.addEdge(node4, node6);
+        stringGraph.addEdge(node3, node6);
+        stringGraph.addEdge(node3, node5);
+
+        List<String> expected = Arrays.asList("Pandora");
+        assertEquals(expected, stringGraph.breadthFirst(node));
     }
 
 

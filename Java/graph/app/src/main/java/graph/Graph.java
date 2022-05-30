@@ -85,6 +85,29 @@ public class Graph<V> {
         return false;
     }
 
+    public List<V> breadthFirst(Node<V> root){
+        List<V> out = new ArrayList<>();
+        Set<Node<V>> visited = new HashSet<>();
+        Queue<Node<V>> queue = new ArrayDeque<>();
+        if(nodes.get(root.getValue())==null)
+            return out;
+        queue.add(nodes.get(root.getValue()));
+        while (!queue.isEmpty()){
+            Node<V> node = queue.remove();
+            if (visited.contains(node)){
+                continue;
+            }
+            out.add(node.getValue());
+            visited.add(node);
+            for(Edges<V> e: node.getEdges()){
+                if (!visited.contains(e.getTo()))
+                    queue.add(nodes.get(e.getTo().getValue()));
+            }
+        }
+
+        return out;
+    }
+
     @Override
     public String toString() {
         return "Graph{" +

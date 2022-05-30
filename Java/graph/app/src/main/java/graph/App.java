@@ -7,17 +7,33 @@ public class App {
 
 
     public static void main(String[] args) {
-     Graph<String> stringGraph = new Graph<>();
-     Node<String> node = new Node<>("A");
-        Node<String> node2 = new Node<>("B");
-        Node<String> node3 = new Node<>("C");
-         stringGraph.addNode("A");
-        stringGraph.addNode("B");
-        stringGraph.addNode("C");
-        stringGraph.addEdge(node,node2);
-        stringGraph.addEdge(node,node3,5);
+        Graph<String> stringGraph = new Graph<>();
+        Node<String> node = new Node<>("Pandora");
+        Node<String> node2 = new Node<>("Arendelle");
+        Node<String> node3 = new Node<>("Metroville");
+        Node<String> node4 = new Node<>("Monstroplolis");
+        Node<String> node5 = new Node<>("Narnia");
+        Node<String> node6 = new Node<>("Naboo");
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Arendelle");
+        stringGraph.addNode("Metroville");
+        stringGraph.addNode("Monstroplolis");
+        stringGraph.addNode("Narnia");
+        stringGraph.addNode("Naboo");
+
+
+        stringGraph.addEdge(node, node2);
+        stringGraph.addEdge(node2, node3);
+        stringGraph.addEdge(node4, node3);
+        stringGraph.addEdge(node4, node6);
+        stringGraph.addEdge(node3, node6);
+        stringGraph.addEdge(node3, node5);
+
+
 //        System.out.println(stringGraph.getNeighbors(node));
-        System.out.println(stringGraph.isConnected(node2,node3));
+//        System.out.println(stringGraph.isConnected(node2,node3));
+        System.out.println(stringGraph.breadthFirst(node));
+////
 
     }
 }
