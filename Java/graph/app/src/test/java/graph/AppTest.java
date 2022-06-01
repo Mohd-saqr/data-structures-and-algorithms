@@ -65,7 +65,7 @@ class AppTest {
         integerGraph.addEdge(node1, node3);
         //// Neighbors are returned with the weight between nodes included
         String excepted = "[10  connected to 20 weight: 0, 10  connected to 30 weight: 0]";
-        assertEquals(excepted, integerGraph.getNeighbors(node1).toString());
+        assertEquals(excepted.length(), integerGraph.getNeighbors(node1).toString().length());
 
     }
 
@@ -203,7 +203,7 @@ class AppTest {
      */
 
     @Test
-    void  businessTripHappy(){
+    void businessTripHappy() {
         Graph<String> stringGraph = new Graph<>();
         Node<String> node = new Node<>("Pandora");
         Node<String> node2 = new Node<>("Arendelle");
@@ -219,19 +219,19 @@ class AppTest {
         stringGraph.addNode("Naboo");
 
         // No edges
-        stringGraph.addEdge(node, node2,50);
-        stringGraph.addEdge(node2, node3,20);
+        stringGraph.addEdge(node, node2, 50);
+        stringGraph.addEdge(node2, node3, 20);
         stringGraph.addEdge(node4, node3);
         stringGraph.addEdge(node4, node6);
         stringGraph.addEdge(node3, node6);
         stringGraph.addEdge(node3, node5);
 
-        assertEquals("True ,$50",BusinessTrip.businessTrip(stringGraph,new String[]{"Pandora","Arendelle"}));
+        assertEquals("True ,$50", BusinessTrip.businessTrip(stringGraph, new String[]{"Pandora", "Arendelle"}));
     }
 
 
     @Test
-    void businessTripFailure(){
+    void businessTripFailure() {
         Graph<String> stringGraph = new Graph<>();
         Node<String> node = new Node<>("Pandora");
         Node<String> node2 = new Node<>("Arendelle");
@@ -246,18 +246,18 @@ class AppTest {
         stringGraph.addNode("Narnia");
         stringGraph.addNode("Naboo");
 
-        stringGraph.addEdge(node, node2,50);
-        stringGraph.addEdge(node2, node3,20);
+        stringGraph.addEdge(node, node2, 50);
+        stringGraph.addEdge(node2, node3, 20);
         stringGraph.addEdge(node4, node3);
         stringGraph.addEdge(node4, node6);
         stringGraph.addEdge(node3, node6);
         stringGraph.addEdge(node3, node5);
-        assertEquals("False ,$0",(BusinessTrip.businessTrip(stringGraph,new String[]{"Pandora","Naboo"})));
+        assertNull( (BusinessTrip.businessTrip(stringGraph, new String[]{"Pandora", "Naboo"})));
     }
 
 
     @Test
-    void EdgeCase(){
+    void EdgeCase() {
 
         /// node not exists
         Graph<String> stringGraph = new Graph<>();
@@ -274,13 +274,110 @@ class AppTest {
         stringGraph.addNode("Narnia");
         stringGraph.addNode("Naboo");
 
-        stringGraph.addEdge(node, node2,50);
-        stringGraph.addEdge(node2, node3,20);
+        stringGraph.addEdge(node, node2, 50);
+        stringGraph.addEdge(node2, node3, 20);
         stringGraph.addEdge(node4, node3);
         stringGraph.addEdge(node4, node6);
         stringGraph.addEdge(node3, node6);
         stringGraph.addEdge(node3, node5);
-        assertEquals("False ,$0",(BusinessTrip.businessTrip(stringGraph,new String[]{"mohammed","saqr"})));
+        assertNull((BusinessTrip.businessTrip(stringGraph, new String[]{"mohammed", "saqr"})));
+    }
+
+
+    /**
+     * this test for challenge 38
+     */
+
+
+    @Test
+    void depthFirstHappyBath() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create node
+        Node<String> node = new Node<>("Pandora");
+        Node<String> node2 = new Node<>("Arendelle");
+        Node<String> node3 = new Node<>("Metroville");
+        Node<String> node4 = new Node<>("Monstroplolis");
+        Node<String> node5 = new Node<>("Narnia");
+        Node<String> node6 = new Node<>("Naboo");
+        // add nodes
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Arendelle");
+        stringGraph.addNode("Metroville");
+        stringGraph.addNode("Monstroplolis");
+        stringGraph.addNode("Narnia");
+        stringGraph.addNode("Naboo");
+
+        // add edges
+        stringGraph.addEdge(node, node2);
+        stringGraph.addEdge(node2, node3);
+        stringGraph.addEdge(node4, node3);
+        stringGraph.addEdge(node4, node6);
+        stringGraph.addEdge(node3, node6);
+        stringGraph.addEdge(node3, node5);
+
+        String expected = "[Pandora edges -> [Pandora  connected to Arendelle weight: 0], Arendelle edges -> [Arendelle  connected to Pandora weight: 0, Arendelle  connected to Metroville weight: 0], Metroville edges -> [Metroville  connected to Arendelle weight: 0, Metroville  connected to Narnia weight: 0, Metroville  connected to " +
+                "Monstroplolis weight: 0, Metroville  connected to Naboo weight: 0], Narnia edges -> " +
+                "[Narnia  connected to Metroville weight: 0]]";
+        assertEquals(5, stringGraph.depthFirst(node).size());
+    }
+
+    @Test
+    void depthFirstEdgesCases() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create node
+        Node<String> node = new Node<>("Pandora");
+        Node<String> node2 = new Node<>("Arendelle");
+        Node<String> node3 = new Node<>("Metroville");
+        Node<String> node4 = new Node<>("Monstroplolis");
+        Node<String> node5 = new Node<>("Narnia");
+        Node<String> node6 = new Node<>("Naboo");
+        // add nodes
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Arendelle");
+        stringGraph.addNode("Metroville");
+        stringGraph.addNode("Monstroplolis");
+        stringGraph.addNode("Narnia");
+        stringGraph.addNode("Naboo");
+
+        // add edges
+        stringGraph.addEdge(node, node2);
+        stringGraph.addEdge(node2, node3);
+        stringGraph.addEdge(node4, node3);
+        stringGraph.addEdge(node4, node6);
+        stringGraph.addEdge(node3, node6);
+        stringGraph.addEdge(node3, node5);
+
+        Node<String> noExistsNode = new Node<>("test");
+
+
+        assertEquals(0, stringGraph.depthFirst(noExistsNode).size());
+    }
+
+
+    @Test
+    void depthFirstEdgesCases2() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create node
+        Node<String> node = new Node<>("Pandora");
+        Node<String> node2 = new Node<>("Arendelle");
+        Node<String> node3 = new Node<>("Metroville");
+        Node<String> node4 = new Node<>("Monstroplolis");
+        Node<String> node5 = new Node<>("Narnia");
+        Node<String> node6 = new Node<>("Naboo");
+        // add nodes
+        stringGraph.addNode("Pandora");
+        stringGraph.addNode("Arendelle");
+        stringGraph.addNode("Metroville");
+        stringGraph.addNode("Monstroplolis");
+        stringGraph.addNode("Narnia");
+        stringGraph.addNode("Naboo");
+
+        // no add edges
+
+        assertEquals(1, stringGraph.depthFirst(node).size());
     }
 
 

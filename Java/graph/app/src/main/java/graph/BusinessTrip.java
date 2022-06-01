@@ -25,7 +25,7 @@ public class BusinessTrip {
             }
         }
         if (cost.equals("")) {
-            cost = "False ,$0";
+            return null;
         } else {
             cost += "$" + sumCost;
         }

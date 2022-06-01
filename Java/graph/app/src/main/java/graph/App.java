@@ -32,12 +32,12 @@ public class App {
 
 //        System.out.println(stringGraph.getNeighbors(node));
 //        System.out.println(stringGraph.isConnected(node2,node3));
-        System.out.println(stringGraph.breadthFirst(node));
+        System.out.println(stringGraph.depthFirst(node));
 ////
 
 
 
-        System.out.println(BusinessTrip.businessTrip(stringGraph,new String[]{"Pandora","Naboo"}));
+//        System.out.println(BusinessTrip.businessTrip(stringGraph,new String[]{"Narnia", "Arendelle", "Naboo"}));
 
     }
 }

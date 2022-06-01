@@ -85,21 +85,21 @@ public class Graph<V> {
         return false;
     }
 
-    public List<V> breadthFirst(Node<V> root){
+    public List<V> breadthFirst(Node<V> root) {
         List<V> out = new ArrayList<>();
         Set<Node<V>> visited = new HashSet<>();
         Queue<Node<V>> queue = new ArrayDeque<>();
-        if(nodes.get(root.getValue())==null)
+        if (nodes.get(root.getValue()) == null)
             return out;
         queue.add(nodes.get(root.getValue()));
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node<V> node = queue.remove();
-            if (visited.contains(node)){
+            if (visited.contains(node)) {
                 continue;
             }
             out.add(node.getValue());
             visited.add(node);
-            for(Edges<V> e: node.getEdges()){
+            for (Edges<V> e : node.getEdges()) {
                 if (!visited.contains(e.getTo()))
                     queue.add(nodes.get(e.getTo().getValue()));
             }
@@ -110,12 +110,33 @@ public class Graph<V> {
 
 
     /**
-     *
      * @this method create for BusinessTrip
      */
 
-    public Node<V> getNode(String value){
+    public Node<V> getNode(String value) {
         return nodes.get(value);
+    }
+
+
+    /**
+     * @CHALLENEG 38
+     */
+
+
+    public List<Node<V>> depthFirst(Node<V> node) {
+        return depthFirst(nodes.get(node.getValue()), new HashSet<Node<V>>(), new ArrayList<>());
+    }
+
+    private List<Node<V>> depthFirst(Node<V> node, Set<Node<V>> visited, List<Node<V>> out) {
+        if (node == null)
+            return out;
+        visited.add(nodes.get(node.getValue()));
+        out.add(node);
+        for (Edges<V> edges : node.getEdges()) {
+            if (!visited.contains(nodes.get(edges.getTo().getValue())))
+                return depthFirst(nodes.get(edges.getTo().getValue()), visited, out);
+        }
+        return out;
     }
 
 

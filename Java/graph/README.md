@@ -78,7 +78,7 @@ we want to create business trip to Determine whether the trip is possible with d
 ## Approach & Efficiency
 Time = O(n^2)
 
-Space = O(n)
+Space = O(1)
 
 ## Solution
 
@@ -90,5 +90,37 @@ BusinessTrip.businessTrip(graph,array)
 
 
 ```
+
+
+-------------------------------------
+
+# code Challenge 38
+# Challenge Summary
+
+# Depth First Traversal
+algorithm traverses a graph in a depth ward motion
+
+## Challenge
+we want to create Depth first for graph
+
+## Approach & Efficiency
+
+time  complexity O(N)
+Space complexity O(N)
+
+## Solution
+
+```
+just create i grap class and call all method suvh as :
+
+Graph<String> stringGraph = new Graph<>();
+stringGraph.addNode(value)
+
+then call the method breadthFirst 
+
+stringGraph.breadthFirst(node).
+
+```
+
 
 
