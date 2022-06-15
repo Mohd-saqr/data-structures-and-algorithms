@@ -12,7 +12,7 @@ public class Graph<V> {
     private int size;
 
     // this hash map handel  all the node in graph and the value as key
-    private HashMap<V, Node<V>> nodes = new HashMap<>();
+    private final HashMap<V, Node<V>> nodes = new HashMap<>();
 
     public Graph() {
     }
@@ -77,8 +77,7 @@ public class Graph<V> {
     // get the Node and  Iterator for Edges and then check if and edges connected
     // to Node 2
     public boolean isConnected(Node<V> node, Node<V> connectedNode) {
-        for (Iterator<Edges<V>> it = nodes.get(node.getValue()).getEdges().iterator(); it.hasNext(); ) {
-            Edges<V> e = it.next();
+        for (Edges<V> e : nodes.get(node.getValue()).getEdges()) {
             if (e.getTo().getValue().equals(connectedNode.getValue())) return true;
         }
 

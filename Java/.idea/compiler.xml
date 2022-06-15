@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Challenge-05.app" target="1.8" />
+      <module name="Challenge-05.app.main" target="1.8" />
+      <module name="Challenge-05.app.test" target="1.8" />
+      <module name="Challenge-08.app" target="1.8" />
+      <module name="Challenge-08.app.main" target="1.8" />
+      <module name="Challenge-08.app.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

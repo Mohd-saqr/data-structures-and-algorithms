@@ -110,6 +110,8 @@ Space complexity O(N)
 
 ## Solution
 
+![](./secreenshot/Depth%20first.png)
+
 ```
 just create i grap class and call all method suvh as :
 
